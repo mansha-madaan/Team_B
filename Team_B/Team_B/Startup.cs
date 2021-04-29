@@ -31,7 +31,7 @@ namespace Team_B
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddDbContext<EmployeeDBContext>(o => o.UseSqlServer("Server=CYG389;Database=EmployeeDB;Trusted_Connection=True;"));
+            services.AddDbContext<EmployeeDBContext>(o => o.UseSqlServer("Server=CYG356;Database=EmployeeDB;Trusted_Connection=True;"));
             services.AddCors(options => options.AddPolicy("AllowAll", p => p.AllowAnyOrigin()
                                                                     .AllowAnyMethod()
                                                                      .AllowAnyHeader()));
