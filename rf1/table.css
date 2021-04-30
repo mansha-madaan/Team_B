@@ -1,0 +1,95 @@
+
+
+
+.table-container {
+    padding: 0 10%;
+    margin: 40px auto 0;
+    
+   
+   
+  }
+ 
+  
+  .table-container h2.table-heading {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 40px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+    color:#F1F1F1;
+   
+    font-family: 'Unicons';
+    
+    
+  }
+
+  .table tbody tr td .btn{
+
+    width: 130px;
+    text-decoration: none;
+    line-height: 35px;
+    font-weight: medium;
+    text-align:center;
+    background-color:#FFeba7;
+    display:inline-block ;
+    vertical-align: middle;
+    user-select: none;
+    border:1px solid transparent;
+    font-size: 14px;
+    color: black;
+    transition: all 200ms linear;
+    letter-spacing: 1px;
+  }
+  
+  .table-container table {
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    transform-style: preserve-3d;
+    color: #222;
+    padding: 24px;
+    box-shadow: 0 4px 30px -10px rgba(0, 0, 0, 0.4);
+    border-collapse: collapse;
+    
+  }
+  
+  .table-container table thead tr {
+    background-color: #102770;
+    color: #fff;
+  }
+  
+  .table-container table td,
+  .table-container table th {
+    padding: 16px 32px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .table-container table tr {
+    border-bottom: 5px solid black;
+    color: #c4c3ca;
+    background-color: #1f2029;
+    
+  }
+  .table-container table tr:hover 
+  {background-color:black;}
+  
+  @media (max-width: 856px) {
+    .table-container table thead {
+      display: none;
+    }
+  
+    .table-container table td {
+      display: block;
+    }
+  
+    .table-container table td::before {
+      content: attr(data-heading) ": ";
+      font-weight: bold;
+      font-size: 20px;
+    }
+ 
+  }
+  
+  
+  
