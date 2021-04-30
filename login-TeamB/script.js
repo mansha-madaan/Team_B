@@ -1,7 +1,13 @@
 console.log("js enabled");
 let baseUrl = "https://localhost:44328/api/login";
+
+let internalPageAfterLogin = "../index.html";
+
+let autoRedirectTime = 2000;
+
 let TempEmail = document.getElementById("logemail");
 let TempPassword = document.getElementById("logpass");
+
 //to do:handel null values in password reset
 
 //in login api handel what if user doesnot exists--current return error 500
@@ -71,7 +77,12 @@ function LoginUser() {
     .then((data) => {
       console.log(data.token);
       localStorage.setItem("token", data.token);
-      swal(`Success`, "", "success");
+      swal({
+        title: "Success",
+        text: "",
+        timer: autoRedirectTime,
+        icon: "success",
+      }).then(() => window.location.replace(internalPageAfterLogin));
     })
     .catch((err) => {
       console.log(err);
