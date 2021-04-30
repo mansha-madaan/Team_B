@@ -22,7 +22,7 @@ namespace Team_B.DbModels
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=CYG362;Database=EmployeeDB;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=CYG389;Database=EmployeeDB;Trusted_Connection=True;");
             }
         }
 
