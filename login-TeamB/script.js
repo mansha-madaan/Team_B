@@ -1,66 +1,115 @@
+console.log("js enabled");
+let baseUrl = "https://localhost:44328/api/login";
+let TempEmail = document.getElementById("logemail");
+let TempPassword = document.getElementById("logpass");
+//to do:handel null values in password reset
+
+//in login api handel what if user doesnot exists--current return error 500
+
 function LoginUser() {
-    var TempEmail = document.getElementById("logemail");
-    var TempPassword = document.getElementById("logpass");
-    //var encrpPassword = crypt.encrypt(TempPassword.value);
+  let emp = {
+    EmpEmailId: TempEmail.value.trim(),
+    EmpPassword: TempPassword.value.trim(),
+  };
 
-     var emp = {
-       EmpEmailId: TempEmail.value,
-       EmpPassword: TempPassword.value
-       
-     };
-    
-     console.log(emp);
+  console.log(emp);
 
+  if (
+    emp.EmpEmailId === null ||
+    emp.EmpEmailId === undefined ||
+    emp.EmpEmailId === ""
+  ) {
+    console.log("caught and called alert");
+    swal({
+      title: "WARNING!",
+      text: "Email Id cannot be Blank",
+      icon: "warning",
+    });
+    return;
+  }
 
-   
-     fetch("https://localhost:44328/api/login", {
-       method: "POST",
-       mode: "cors", // no-cors, *cors, same-origin
-       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-       credentials: "same-origin", // include, *same-origin, omit
-       headers: {
-         "Content-Type": "application/json",
-         // 'Content-Type': 'application/x-www-form-urlencoded',
-       },
-       redirect: "follow", // manual, *follow, error
-       referrerPolicy: "no-referrer",
-       body: JSON.stringify(emp),
-     })
-       .then((res) => {
-         console.log(res);
-         return res.json();
-       })
-       .then((data) => {
-         console.log(data.token);
-         localStorage.setItem("token", data.token);
-         
-       });
+  if (
+    emp.EmpPassword === null ||
+    emp.EmpPassword === undefined ||
+    emp.EmpPassword === ""
+  ) {
+    console.log("caught and called alert");
+    swal({
+      title: "WARNING!",
+      text: "Password cannot be Blank",
+      icon: "warning",
+    });
+    return;
+  }
+
+  fetch(baseUrl, {
+    method: "POST",
+    mode: "cors", // no-cors, *cors, same-origin
+    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: "same-origin", // include, *same-origin, omit
+    headers: {
+      "Content-Type": "application/json",
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    redirect: "follow", // manual, *follow, error
+    referrerPolicy: "no-referrer",
+    body: JSON.stringify(emp),
+  })
+    .then((res) => {
+      console.log(res);
+      if (res.status === 401) {
+        console.log("called alert for wrong");
+        swal({
+          title: "WRONG!",
+          text: "Invalid User Name or Password",
+          icon: "error",
+        });
+        Promise.reject();
+      }
+      return res.json();
+    })
+    .then((data) => {
+      console.log(data.token);
+      localStorage.setItem("token", data.token);
+      swal(`Success`, "", "success");
+    })
+    .catch((err) => {
+      console.log(err);
+      console.log("oops something went wrong " + err);
+    });
 }
-// // (B) ENCRYPT & DECRYPT FUNCTIONS
-// var crypt = {
-//   // (B1) THE SECRET KEY
-//   secret : "CIPHERKEY",
- 
-//   // (B2) ENCRYPT
-//   encrypt : function (clear) {
-//     var cipher = CryptoJS.AES.encrypt(clear, crypt.secret);
-//     cipher = cipher.toString();
-//     return cipher;
-//   },
- 
-//   // (B3) DECRYPT
-//   decrypt : function (cipher) {
-//     var decipher = CryptoJS.AES.decrypt(cipher, crypt.secret);
-//     decipher = decipher.toString(CryptoJS.enc.Utf8);
-//     return decipher;
-//   }
-// };
- 
-// // (C) TEST
-// // (C1) ENCRYPT CLEAR TEXT
-// var cipher = crypt.encrypt("Mansha@123");
-// console.log(cipher);
- 
-// // (C2) DECRYPT CIPHER TEXT
-// var decipher = crypt.decrypt(cipher);
-// console.log(decipher);
+
+function forgotPassword() {
+  let emp = {
+    EmpEmailId: TempEmail.value.trim(),
+    EmpPassword: TempPassword.value.trim(),
+  };
+  swal("Enter Your Email Id", {
+    content: "input",
+  })
+    .then((value) => {
+      //       if (!value) throw null;
+      console.log("entered ", value);
+      swal(`Write Otp sent to ${value}`, {
+        content: "input",
+      }).then((value) => {
+        //  if (!value) throw null;
+        console.log("entered ", value);
+        swal(`Write new password`, {
+          content: "input",
+        }).then((value) => {
+          console.log("entered ", value);
+          swal(`Updated`, "Done!", "success");
+          console.log("write ajax call");
+        });
+      });
+    })
+    .catch((err) => {
+      if (err) {
+        swal("oops", "Something Went Wrong!", "error");
+      } else {
+        swal.stopLoading();
+        swal.close();
+      }
+    });
+}
