@@ -1,40 +1,126 @@
+console.log("js enabled");
+let baseUrl = "https://localhost:44328/api/login";
+
+let internalPageAfterLogin = "../index.html";
+
+let autoRedirectTime = 2000;
+
+let TempEmail = document.getElementById("logemail");
+let TempPassword = document.getElementById("logpass");
+
+//to do:handel null values in password reset
+
+//in login api handel what if user doesnot exists--current return error 500
+
 function LoginUser() {
-    
+  let emp = {
+    EmpEmailId: TempEmail.value.trim(),
+    EmpPassword: TempPassword.value.trim(),
+  };
 
-    var myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
+  console.log(emp);
 
-    var inemmail = document.getElementById("logemail");
-    var inpassword = document.getElementById("logpass");
-    var hash = calcMD5("input string");
-    console.log(hash);
-
-    var raw = JSON.stringify({
-        "InternId": form1.email.value,
-        "Password": form1.password.value
+  if (
+    emp.EmpEmailId === null ||
+    emp.EmpEmailId === undefined ||
+    emp.EmpEmailId === ""
+  ) {
+    console.log("caught and called alert");
+    swal({
+      title: "WARNING!",
+      text: "Email Id cannot be Blank",
+      icon: "warning",
     });
+    return;
+  }
 
+  if (
+    emp.EmpPassword === null ||
+    emp.EmpPassword === undefined ||
+    emp.EmpPassword === ""
+  ) {
+    console.log("caught and called alert");
+    swal({
+      title: "WARNING!",
+      text: "Password cannot be Blank",
+      icon: "warning",
+    });
+    return;
+  }
 
+  fetch(baseUrl, {
+    method: "POST",
+    mode: "cors", // no-cors, *cors, same-origin
+    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: "same-origin", // include, *same-origin, omit
+    headers: {
+      "Content-Type": "application/json",
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    redirect: "follow", // manual, *follow, error
+    referrerPolicy: "no-referrer",
+    body: JSON.stringify(emp),
+  })
+    .then((res) => {
+      console.log(res);
+      if (res.status === 401) {
+        console.log("called alert for wrong");
+        swal({
+          title: "WRONG!",
+          text: "Invalid User Name or Password",
+          icon: "error",
+        });
+        Promise.reject();
+      }
+      return res.json();
+    })
+    .then((data) => {
+      console.log(data.token);
+      localStorage.setItem("token", data.token);
+      swal({
+        title: "Success",
+        text: "",
+        timer: autoRedirectTime,
+        icon: "success",
+      }).then(() => window.location.replace(internalPageAfterLogin));
+    })
+    .catch((err) => {
+      console.log(err);
+      console.log("oops something went wrong " + err);
+    });
+}
 
-    // "firstName": form1.fname.value,
-    var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: raw,
-        redirect: 'follow'
-    };
-
-    fetch(Baseurl + "/api/Login", requestOptions)
-        .then(response => response.json())
-        .then(result => {
-            if (result.token == '') {
-                alert("Wrong Username And Password!")
-            }
-            else {
-                localStorage.setItem("student-management-token", result.token);
-                location.replace("./Home.html")
-
-            }
-        })
-        .catch(error => alert("Some Error Occured!"));
+function forgotPassword() {
+  let emp = {
+    EmpEmailId: TempEmail.value.trim(),
+    EmpPassword: TempPassword.value.trim(),
+  };
+  swal("Enter Your Email Id", {
+    content: "input",
+  })
+    .then((value) => {
+      //       if (!value) throw null;
+      console.log("entered ", value);
+      swal(`Write Otp sent to ${value}`, {
+        content: "input",
+      }).then((value) => {
+        //  if (!value) throw null;
+        console.log("entered ", value);
+        swal(`Write new password`, {
+          content: "input",
+        }).then((value) => {
+          console.log("entered ", value);
+          swal(`Updated`, "Done!", "success");
+          console.log("write ajax call");
+        });
+      });
+    })
+    .catch((err) => {
+      if (err) {
+        swal("oops", "Something Went Wrong!", "error");
+      } else {
+        swal.stopLoading();
+        swal.close();
+      }
+    });
 }
