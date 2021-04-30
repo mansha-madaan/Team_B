@@ -15,6 +15,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Team_B.DbModels;
+using Team_B.Services;
 
 namespace Team_B
 {
@@ -31,7 +32,9 @@ namespace Team_B
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddDbContext<EmployeeDBContext>(o => o.UseSqlServer("Server=CYG356;Database=EmployeeDB;Trusted_Connection=True;"));
+            services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
+            services.AddTransient<IMailService, Services.MailService>();
+            services.AddDbContext<EmployeeDBContext>(o => o.UseSqlServer("Server=CYG389;Database=EmployeeDB;Trusted_Connection=True;"));
             services.AddCors(options => options.AddPolicy("AllowAll", p => p.AllowAnyOrigin()
                                                                     .AllowAnyMethod()
                                                                      .AllowAnyHeader()));
