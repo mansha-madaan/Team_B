@@ -7,9 +7,16 @@ let autoRedirectTime = 2000;
 
 let TempEmail = document.getElementById("logemail");
 let TempPassword = document.getElementById("logpass");
-
+function validateEmailAddress(emailString) {
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return (
+    //not null and checks
+    !!emailString &&
+    typeof emailString === "string" &&
+    emailRegex.test(emailString)
+  );
+}
 //to do:handel null values in password reset
-
 //in login api handel what if user doesnot exists--current return error 500
 
 function LoginUser() {
@@ -20,21 +27,15 @@ function LoginUser() {
 
   console.log(emp);
 
-  if (
-    emp.EmpEmailId === null ||
-    emp.EmpEmailId === undefined ||
-    emp.EmpEmailId === ""
-  ) {
-    console.log("caught and called alert");
+  if (!validateEmailAddress(emp.EmpEmailId)) {
+    console.log("caught and called alert for email");
     swal({
       title: "WARNING!",
-      text: "Email Id cannot be Blank",
+      text: "Invalid Email Id ",
       icon: "warning",
     });
     return;
-  }
-
-  if (
+  } else if (
     emp.EmpPassword === null ||
     emp.EmpPassword === undefined ||
     emp.EmpPassword === ""
