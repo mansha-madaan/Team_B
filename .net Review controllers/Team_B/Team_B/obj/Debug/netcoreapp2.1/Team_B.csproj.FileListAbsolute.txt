@@ -1,0 +1,14 @@
+C:\Users\bhanuja.aggarwal\source\repos\Team_B\Team_B\bin\Debug\netcoreapp2.1\Team_B.deps.json
+C:\Users\bhanuja.aggarwal\source\repos\Team_B\Team_B\bin\Debug\netcoreapp2.1\Team_B.runtimeconfig.json
+C:\Users\bhanuja.aggarwal\source\repos\Team_B\Team_B\bin\Debug\netcoreapp2.1\Team_B.runtimeconfig.dev.json
+C:\Users\bhanuja.aggarwal\source\repos\Team_B\Team_B\bin\Debug\netcoreapp2.1\Team_B.dll
+C:\Users\bhanuja.aggarwal\source\repos\Team_B\Team_B\bin\Debug\netcoreapp2.1\Team_B.pdb
+C:\Users\bhanuja.aggarwal\source\repos\Team_B\Team_B\obj\Debug\netcoreapp2.1\Team_B.csprojAssemblyReference.cache
+C:\Users\bhanuja.aggarwal\source\repos\Team_B\Team_B\obj\Debug\netcoreapp2.1\Team_B.csproj.CoreCompileInputs.cache
+C:\Users\bhanuja.aggarwal\source\repos\Team_B\Team_B\obj\Debug\netcoreapp2.1\Team_B.RazorAssemblyInfo.cache
+C:\Users\bhanuja.aggarwal\source\repos\Team_B\Team_B\obj\Debug\netcoreapp2.1\Team_B.RazorAssemblyInfo.cs
+C:\Users\bhanuja.aggarwal\source\repos\Team_B\Team_B\obj\Debug\netcoreapp2.1\Team_B.AssemblyInfoInputs.cache
+C:\Users\bhanuja.aggarwal\source\repos\Team_B\Team_B\obj\Debug\netcoreapp2.1\Team_B.AssemblyInfo.cs
+C:\Users\bhanuja.aggarwal\source\repos\Team_B\Team_B\obj\Debug\netcoreapp2.1\Team_B.RazorTargetAssemblyInfo.cache
+C:\Users\bhanuja.aggarwal\source\repos\Team_B\Team_B\obj\Debug\netcoreapp2.1\Team_B.dll
+C:\Users\bhanuja.aggarwal\source\repos\Team_B\Team_B\obj\Debug\netcoreapp2.1\Team_B.pdb
