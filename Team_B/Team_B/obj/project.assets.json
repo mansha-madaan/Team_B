@@ -13275,23 +13275,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\aditya.sharma\\.nuget\\packages\\": {},
+    "C:\\Users\\mansha.madaan\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aditya.sharma\\Desktop\\Team_B\\Team_B\\Team_B\\Team_B.csproj",
+      "projectUniqueName": "C:\\Users\\mansha.madaan\\Desktop\\backup\\Team_B\\Team_B\\Team_B.csproj",
       "projectName": "Team_B",
-      "projectPath": "C:\\Users\\aditya.sharma\\Desktop\\Team_B\\Team_B\\Team_B\\Team_B.csproj",
-      "packagesPath": "C:\\Users\\aditya.sharma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aditya.sharma\\Desktop\\Team_B\\Team_B\\Team_B\\obj\\",
+      "projectPath": "C:\\Users\\mansha.madaan\\Desktop\\backup\\Team_B\\Team_B\\Team_B.csproj",
+      "packagesPath": "C:\\Users\\mansha.madaan\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mansha.madaan\\Desktop\\backup\\Team_B\\Team_B\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\aditya.sharma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mansha.madaan\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13351,13 +13351,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\aditya.sharma\\Desktop\\Team_B\\Team_B\\Team_B\\obj\\Team_B.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
