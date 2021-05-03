@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./myReveiw.css">
+    <link rel="stylesheet" href="./myReveiwtry.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -16,35 +16,35 @@
     }
 
     body{
-  background-color: #2a2b38;
+  background-color: #323442;
   background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
     }
 </style>
 </head>
 <body>
-    
-
-<div class="container" style="align-items: center; background-image: linear-gradient(to right,rgb(240, 230, 147), rgb(238, 229, 107));">
-
-
-  <div class="back-container">
-
-          <table class="container">
-            <thead>
+<div class="container" id="main-container">
+ <div class="back-container">
+    <!-- <span class="row"><h1 class="display-4" > PERSONAL DETAILS </h1></span> -->
+<table class="container" id="review-table">
+            <thead id="review-head">
               <tr>
-                <th><h1></h1></th>
-                <th><h1>PERSONAL DETAILS</h1></th>
+                <!-- <td>NAME</td>
+                <td>AVNEET KAUR</td> -->
+             </tr>
+            </thead>
+            <tbody id="review-body">
+              <tr>
+                <td>NAME</td>
+                <td>AVNEET KAUR</td>
         
               </tr>
-            </thead>
-            <tbody>
               <tr>
                 <td>Emp Code</td>
                 <td>CYG602</td>
               </tr>
               <tr>
-                <td>Name</td>
-                <td>Avneet Kaur</td>
+                <td>Designation</td>
+                <td>ABC</td>
               </tr>
               <tr>
                 <td>Amazon</td>
@@ -65,98 +65,212 @@
             </tbody>
           </table>
           </div>
-         </div>
-          
-              <br>
-           <hr>
-        <br>
-
-        
-    
-        <div class="container-2">
-        <div class="row2" style="background-color:rgb(33, 34, 54);">
-         <button id="effectiveness" onclick="document.getElementById('myModal01').style.display='block'"> <i class="fa fa-check-square-o" aria-hidden="true" style="font-size:130%;font-weight: bold;color: #f3e192; margin: 1rem;">  EFFECTIVENESS  </i></button> <hr style="background-color: rgb(122, 121, 111);">
-         <button onclick="showhide()"><i class="fa fa-clock-o" aria-hidden="true" style="font-size:130%;font-weight: bold;color: rgba(250, 234, 146, 0.979); margin: 1rem;">  DELIVERY</i></button>
-         <!-- Hiding Div -->
-   <div id="delivery">
-     
-    <table class="container">
+        <hr style="background-color: rgb(75, 75, 97);">
+          <br>
+       <!-- <div class="container-2"> -->
+        <div class="row2" id="effective-row">
+         <button id="btn-effectiveness" onclick="showhide1()"> <i class="fa fa-check-square-o" aria-hidden="true" >  EFFECTIVENESS  </i></button>
+          <!-- Hiding Div In Effectiveness -->
+   <div id="effectiveness">
+    <table class="container" id="effective-table">
       <thead>
         <tr>
-          <th><h1> Key Result Area</h1></th>
-          <th><h1>Review Self Evaluation</h1>
-          <p>(To be filled by the Reviewee, max2500 chars)</p>
+          <th scope="col"><h1> Key Result Area</h1></th>
+          <th scope="col"><h1>Review Self Evaluation</h1>
+          <p>(To be filled by the Reviewee, max 2500 chars)</p>
           </th>
-          <th><h1>Self Assesment</h1></th>
-          <th><h1>Reviewer/QA'er Comments</h1>
-          <p>(To be filled by the Reviewer/QA'er, max 2500 chars)</p>></th>
-          <th><h1>Reviewer/QA'er Rating</h1></th>
+          <th scope="col"><h1>Self Assesment</h1></th>
+          <th scope="col"><h1>Reviewer/QA'er Comments</h1>
+          <p>(To be filled by the Reviewer/QA'er, max    2500 chars)</p></th>
+          <th scope="col" style="width: 10rem;"><h1>Reviewer/QA'er Rating</h1></th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>Emp Code</td>
-          <td><textarea id="ta-1" name="ta-1" rows="4" cols="50"></textarea></td>
-          <td>CYG602</td>
-          <td><textarea id="ta-1" name="ta-1" rows="4" cols="50"></textarea></td>
-          <td>CYG602</td>
-        </tr>
-        <tr>
-          <td>Name</td>
-          <td>Avneet Kaur</td>
-          <td>CYG602</td>
-          <td>CYG602</td>
-          <td>CYG602</td>
-        </tr>
-        <tr>
-          <td>Amazon</td>
-          <td>00:24:34</td>
-          <td>CYG602</td>
-          <td>CYG602</td>
-          <td>CYG602</td>
-        </tr>
-        <tr>
-          <td>LinkedIn</td>
-          <td>00:12:10</td>
-          <td>CYG602</td>
-          <td>CYG602</td>
-          <td>CYG602</td>
-        </tr>
-        <tr>
-          <td>CodePen</td>
-          <td>00:46:19</td>
-          <td>CYG602</td>
-          <td>CYG602</td>
-          <td>CYG602</td>
-        </tr>
-        <tr>
-          <td>GitHub</td>
-          <td>00:31:52</td>
-          <td>CYG602</td>
-          <td>CYG602</td>
-          <td>CYG602</td>
+          <td data-title="Key Result Area" style="font-weight:normal">Technical Skills</td>
+          <td data-title="Review Self Evaluation"><textarea id="ta-1" name="ta-1" rows="4" cols="50" ></textarea></td>
+          <td data-title="Self Assesment"><select id="mySelect1">
+            <option>Select</option>
+            <option>Less Than Expectation</option>
+            <option>Meet Expectation</option>
+            <option>Exceed Exception</option>
+          </select></td>
+          <td data-title="Reviewer/QA'er Comments"><textarea id="ta-2" name="ta-2" rows="4" cols="50" ></textarea></td>
+          <td data-title="Reviewer/QA'er Rating"><select id="mySelect2">
+            <option>Select</option>
+            <option>Less Than Expectation</option>
+            <option>Meet Expectation</option>
+            <option>Exceed Exception</option>
+          </select></td>
         </tr>
       </tbody>
     </table>
     </div>
-  
-         <hr  style="background-color: rgb(111, 113, 122);">
-          <a href="#"><i class="fa fa-user-plus" aria-hidden="true"  style="font-size:130%;font-weight: bold;color: rgba(250, 234, 146, 0.979); margin: 1rem;">  LEADERSHIP</i></a><hr style="background-color: rgb(111, 113, 122);">
-        <a href="#"><i class="fa fa-paper-plane" aria-hidden="true" style="font-size:130%;font-weight: bold;color: rgba(250, 234, 146, 0.979); margin: 1rem;">  GROWTH AND PROFITABILITY</i></a><hr style="background-color: rgb(111, 113, 122);">
-          <a href="#"><i class="fa fa-file-text-o" aria-hidden="true" style="font-size:130%;font-weight: bold;color: rgba(250, 234, 146, 0.979); margin: 1rem;">  FEEDBACK</i></a><hr style="background-color: rgb(111, 113, 122);">
-         
-         </div>
-         </div>
-         
-
-
-
-  
+    </div>
+   <!-- <hr style="background-color: rgb(122, 121, 111);"> -->
+    <div class="row2" id="delivery-row">
+    <button id="btn-delivery" onclick="showhide2()"><i class="fa fa-clock-o" aria-hidden="true">  DELIVERY</i></button>
+         <!-- Hiding Div In Delivery -->
+   <div id="delivery">
+    <table class="container" id="delivery-table">
+      <thead>
+        <tr>
+          <th  scope="col"><h1> Key Result Area</h1></th>
+          <th  scope="col"><h1>Review Self Evaluation</h1>
+          <p>(To be filled by the Reviewee, max2500 chars)</p>
+          </th>
+          <th  scope="col"><h1>Self Assesment</h1></th>
+          <th  scope="col"><h1>Reviewer/QA'er Comments</h1>
+          <p>(To be filled by the Reviewer/QA'er, max 2500 chars)</p>></th>
+          <th  scope="col" style="width: 10rem;"><h1>Reviewer/QA'er Rating</h1></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-title="Key Result Area" style="font-weight:normal;">Technical Skills</td>
+          <td Review Self Evaluation><textarea id="ta-3" name="ta-3" rows="4" cols="50" ></textarea></td>
+          <td data-title="Self Assesment"> <select id="mySelect3">
+            <option>Select</option>
+            <option>Less Than Expectation</option>
+            <option>Meet Expectation</option>
+            <option>Exceed Exception</option>
+          </select></td>
+          <td data-title="Reviewer/QA'er Comments"><textarea id="ta-4" name="ta-4" rows="4" cols="50" ></textarea></td>
+          <td data-title="Reviewer/QA'er Rating"><select id="mySelect4">
+            <option>Select</option>
+            <option>Less Than Expectation</option>
+            <option>Meet Expectation</option>
+            <option>Exceed Exception</option>
+          </select></td>
+        </tr>
+       </tbody>
+    </table>
+    </div>
+    </div>
+  <!-- <hr  style="background-color: rgb(111, 113, 122);"> -->
+  <div class="row2" id="leadership-row">
+         <button id="btn-leadership" onclick="showhide3()"><i class="fa fa-user-plus" aria-hidden="true"  >  LEADERSHIP</i></button>
+          <!-- Hiding Div In Leadership -->
+   <div id="leadership">
+    <table class="container" id="leadership-table">
+      <thead>
+        <tr>
+          <th  scope="col"><h1> Key Result Area</h1></th>
+          <th  scope="col"><h1>Review Self Evaluation</h1>
+          <p>(To be filled by the Reviewee, max2500 chars)</p>
+          </th>
+          <th  scope="col"><h1>Self Assesment</h1></th>
+          <th  scope="col"><h1>Reviewer/QA'er Comments</h1>
+          <p>(To be filled by the Reviewer/QA'er, max 2500 chars)</p>></th>
+          <th  scope="col" style="width: 10rem;"><h1>Reviewer/QA'er Rating</h1></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-title="Key Result Area" style="font-weight:normal">Technical Skills</td>
+          <td data-title="Review Self Evaluation"><textarea id="ta-5" name="ta-5" rows="4" cols="50" ></textarea></td>
+          <td data-title="Self Assesment"><select id="mySelect5">
+            <option>Select</option>
+            <option>Less Than Expectation</option>
+            <option>Meet Expectation</option>
+            <option>Exceed Exception</option>
+          </select></td>
+          <td data-title="Reviewer/QA'er Comments"><textarea id="ta-6" name="ta-6" rows="4" cols="50" ></textarea></td>
+          <td data-title="Reviewer/QA'er Rating"><select id="mySelect6">
+            <option>Select</option>
+            <option>Less Than Expectation</option>
+            <option>Meet Expectation</option>
+            <option>Exceed Exception</option>
+          </select></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+         <!-- <hr style="background-color: rgb(111, 113, 122);"> -->
+         <div class="row2" id="growth-row">
+        <button id="btn-growth" onclick="showhide4()"><i class="fa fa-paper-plane" aria-hidden="true" >  GROWTH AND PROFITABILITY</i></button>
+            <!-- Hiding Div In Growth -->
+   <div id="growth">
+    <table class="container" id="growth-table">
+      <thead>
+        <tr>
+          <th  scope="col"><h1> Key Result Area</h1></th>
+          <th  scope="col"><h1>Review Self Evaluation</h1>
+          <p>(To be filled by the Reviewee, max2500 chars)</p>
+          </th>
+          <th  scope="col"><h1>Self Assesment</h1></th>
+          <th  scope="col"><h1>Reviewer/QA'er Comments</h1>
+          <p>(To be filled by the Reviewer/QA'er, max 2500 chars)</p>></th>
+          <th  scope="col" style="width: 10rem;"><h1>Reviewer/QA'er Rating</h1></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-title="Key Result Area" style="font-weight:normal">Technical Skills</td>
+          <td data-title="Review Self Evaluation"><textarea id="ta-7" name="ta-7" rows="4" cols="50" ></textarea></td>
+          <td data-title="Self Assesment"><select id="mySelect7">
+            <option>Select</option>
+            <option>Less Than Expectation</option>
+            <option>Meet Expectation</option>
+            <option>Exceed Exception</option>
+          </select></td>
+          <td data-title="Reviewer/QA'er Comments"><textarea id="ta-8" name="ta-8" rows="4" cols="50"></textarea></td>
+          <td data-title="Reviewer/QA'er Rating"><select id="mySelect8">
+            <option>Select</option>
+            <option>Less Than Expectation</option>
+            <option>Meet Expectation</option>
+            <option>Exceed Exception</option>
+          </select></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    </div> 
+    <div class="row2" id="feedback-row">
+       <button id="btn-feedback" onclick="showhide5()"><i class="fa fa-file-text-o" aria-hidden="true" >  FEEDBACK</i></button>
+         <!-- Hiding Div In Feedback -->
+   <div id="feedback">
      
-     
-     <script src="./myReview.js"></script>
-
+    <table class="container" id-feedback-table>
+      <thead>
+        <tr>
+          <th  scope="col"><h1> Key Result Area</h1></th>
+          <th  scope="col"><h1>Review Self Evaluation</h1>
+          <p>(To be filled by the Reviewee, max2500 chars)</p>
+          </th>
+          <th  scope="col"><h1>Self Assesment</h1></th>
+          <th  scope="col"><h1>Reviewer/QA'er Comments</h1>
+          <p>(To be filled by the Reviewer/QA'er, max 2500 chars)</p>></th>
+          <th  scope="col" style="width: 10rem;"><h1>Reviewer/QA'er Rating</h1></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-title="Key Result Area" style="font-weight:normal">Technical Skills</td>
+          <td data-title="Review Self Evaluation"><textarea id="ta-9" name="ta-9" rows="4" cols="50" ></textarea></td>
+          <td data-title="Self Assesment"><select id="mySelect9">
+            <option>Select</option>
+            <option>Less Than Expectation</option>
+            <option>Meet Expectation</option>
+            <option>Exceed Exception</option>
+          </select></td>
+          <td data-title="Reviewer/QA'er Comments"><textarea id="ta-10" name="ta-10" rows="4" cols="50" ></textarea></td>
+          <td data-title="Reviewer/QA'er Rating"><select id="mySelect10">
+            <option>Select</option>
+            <option>Less Than Expectation</option>
+            <option>Meet Expectation</option>
+            <option>Exceed Exception</option>
+          </select></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
    
+    
+    <script src="./myReview.js"></script>
 </body>
 </html>
 
