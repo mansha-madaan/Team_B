@@ -27,150 +27,97 @@
 <body onload="empReviewerReview()">
     
 
-    <div class="wrapper">
+     <div class="wrapper">
          
-        <nav id="sidebar">
-           <div id="dismiss">
-               <i class="fas fa-arrow-left"></i>
-           </div>
+         <nav id="sidebar">
+            <div id="dismiss">
+                <i class="fas fa-arrow-left"></i>
+            </div>
 
-           <div class="sidebar-header">
-               <h3><i style='font-size:40px;align-items: center;' class='fas'>&#xf406;</i></h3>
-           </div>
+            <div class="sidebar-header">
+                <h3><i style='font-size:40px;align-items: center;' class='fas'>&#xf406;</i></h3>
+            </div>
 
-           <ul class="list-unstyled components">
-               <p>Initials</p>
-               <li >
-                   <a href="./home.html"><i class="fas fa-home"></i>  Home</a>
-                  
-               </li>
-               <li>
-                   <a href="./myprofile.html"><i class="fas fa-user-circle"></i>  My Profile</a>
-                   <a href="#review" data-toggle="collapse" aria-expanded="false"><i class="fas fa-trophy"></i> My Review</a>
-                   <ul class="collapse list-unstyled" id="review">
-                       <li>
-                           <a href="./self.html">Self Review</a>
-                       </li>
-                       <li>
-                           <a href="./reviewer.html">Pending Review As Reviewer</a>
-                       </li>
-                       <li>
-                           <a href="./qa.html">Pending Review As Qa'er</a>
-                       </li>
-                       <li>
-                           <a href="./closed.html">Closed</a>
-                       </li>
-                   </ul>
-               </li>
-               <li>
-                   <a href="./Login.html" onclick= "localStorage.removeItem('token')"><i class="fas fa-sign-out-alt"></i>  Logout</a>
-               </li>
-               
-           </ul>
-
-          
-       </nav>
-       <div class="form">
-           <input class="search-text" type="text" class="search-data" placeholder="Type to search" required>
-           <a class="search-btn" href="#"></a>
-           <i class="fas fa-search"></i> 
-            <!-- <button type="submit" class="fas fa-search"></button>  -->
-         </div> 
-
-       <!-- Page Content  -->
-       <div id="content">
-
-          
-               <div class="container-fluid">
-
-                   <button type="button" id="sidebarCollapse" class="btn btn-info" style="background-color: #ffeba7; color:black;">
-                       <i class="fas fa-align-left"></i>
-                       <span></span>
-                   </button>
-                  
-
-                  
-               </div>
-           
-
-
-
-
-
-           
+            <ul class="list-unstyled components">
+                <p>Initials</p>
+                <li >
+                    <a href="#" data-toggle="collapse" aria-expanded="false"><i class="fas fa-home"></i>  Home</a>
+                   
+                </li>
+                <li>
+                    <a href="./myprofile.html" ><i class="fas fa-user-circle"></i>  My Profile</a>
+                    <a href="#review" data-toggle="collapse" aria-expanded="false"><i class="fas fa-trophy"></i> My Review</a>
+                    <ul class="collapse list-unstyled" id="review">
+                        <li>
+                            <a href="./self.html">Self Review</a>
+                        </li>
+                        <li>
+                            <a href="./reviewer.html">Pending Review As Reviewer</a>
+                        </li>
+                        <li>
+                            <a href="./qa.html">Pending Review As Reviewer</a>
+                        </li>
+                        <li>
+                            <a href="./closed.html">Closed</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="./Login.html" onclick= "localStorage.removeItem('token')"><i class="fas fa-sign-out-alt"></i>  Logout</a>
+                </li>
                 
-               
-           <div class="table-container">
-               <h2 class="table-heading">Pending Review as Reviewer</h2>
-               
-               <div class="fixTableHead">
+            </ul>
+
            
-               <table class="table">
-                 <thead>
-                   <tr>
-                     <th>Form Name</th>
-                     <th>Cycle</th>
-                     <th>Target Date</th>
-                     <th>Status</th>
-                     <th>Action</th>
-                   </tr>
-                 </thead>
-                 
-                 <tbody id="reviewerTableContent">
-                   <!-- <tr>
-                     <td data-heading="Form Name">Associate 1</td>
-                     <td data-heading="Cycle">Arrived Review 2021</td>
-                     <td data-heading="TargetData">09-10-21</td>
-                     <td data-heading="Status">Close</td>
-                     <td data-heading="Action"><a href="#" class="btn">View</a></td>
-                   </tr>
+        </nav>
+        <div class="form">
+            <input class="search-text" type="text" class="search-data" placeholder="Type to search" required>
+            <a class="search-btn" href="#"></a>
+            <i class="fas fa-search"></i> 
+             <!-- <button type="submit" class="fas fa-search"></button>  -->
+          </div> 
+
+        <!-- Page Content  -->
+        <div id="content">
+
            
-                   <tr>
-                     <td data-heading="Form Name">Associate 2</td>
-                     <td data-heading="Cycle">Arrived Review 2021</td>
-                     <td data-heading="TargetData">21-10-20</td>
-                     <td data-heading="Status">Close</td>
-                     <td data-heading="#"><a href="#" class="btn">View</a></td>
-                   </tr>
-           
-                   <tr>
-                     <td data-heading="Form Name">Associate 3</td>
-                     <td data-heading="Cycle">Arrived Review 2021</td>
-                     <td data-heading="TargetData">14-10-21</td>
-                     <td data-heading="Status">Open</td>
-                     <td data-heading="#"><a href="#" class="btn">View</a></td>
-                   </tr>
-                   <tr>
-                     <td data-heading="Form Name">Associate 3</td>
-                     <td data-heading="Cycle">Arrived Review 2021</td>
-                     <td data-heading="TargetData">14-10-21</td>
-                     <td data-heading="Status">Open</td>
-                     <td data-heading="#"><a href="#" class="btn">View</a></td>
-                   </tr>
-                   <tr>
-                     <td data-heading="Form Name">Associate 3</td>
-                     <td data-heading="Cycle">Arrived Review 2021</td>
-                     <td data-heading="TargetData">14-10-21</td>
-                     <td data-heading="Status">Open</td>
-                     <td data-heading="#"><a href="#" class="btn">View</a></td>
-                   </tr> -->
-                 </tbody>
-               </table>
-              <!--<center>
-               <div class="page">
-                   <a href="#">&laquo;</a>
-                   <a href="#" class="active">1</a>
-                   <a href="#">2</a>
-                   <a href="#">3</a>
-                   <a href="#">4</a>
-                   <a href="#">5</a>
-                   <a href="#">&raquo;</a>
-               </div>
-           </center>-->
-           </div>
-           </div>
-           
-               
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span></span>
+                    </button>
+                 </div>
+            
+ <div class="table-container">
+                <h2 class="table-heading">Pending Review as Reviewer</h2>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Form Name</th>
+                      <th>Cycle</th>
+                      <th>Target Date</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  
+                  <tbody id="reviewerTableContent">
+                    </tbody>
+                </table>
+               <center>
+                <div class="page">
+                    <a href="#">&laquo;</a>
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">&raquo;</a>
+                </div>
+            </center>
+            </div>        
+             
    <div class="overlay"></div>
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
@@ -182,11 +129,9 @@
     <!-- jQuery Custom Scroller CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
-    <script type="text/javascript" src="reviewer.js"></script>
-    
-    <script src="./review.js"></script>
+    <script type="text/javascript" src="reviewer.js">
         
-    
+    </script>
 </body>
 
 </html>
