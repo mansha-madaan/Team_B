@@ -306,12 +306,13 @@ let checkAndSave = () => {
     .reverse()
     .join("-");
   let record = {
-    // ReviewName: reviewName.textContent,
-    // TargetDate: targetDate.textContent,
-    // ReviewCycle: reviewCycle.textContent,
-    // PromotionCycle: promotionCycle.textContent,
-    // RName: rName.textContent,
-    // QaName: qaName.textContent,
+
+    ReviewName: reviewName.textContent,
+    TargetDate: targetDate.textContent,
+    ReviewCycle: reviewCycle.textContent,
+    PromotionCycle: promotionCycle.textContent,
+    RName: rName.textContent,
+    QaName: qaName.textContent,
     SelfEffect: selfEffect3000.value,
     SelfEffectStatus: selfEffectStatus.value,
     SelfLead: selfLeader3000.value,

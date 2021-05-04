@@ -51,6 +51,7 @@ namespace ReviewManagementSystem.Controllers
             {
                 Review XReview = new Review();
                 XReview.EmpId = emp.EmpId;
+                
                 XReview.Rstatus = reviewRequest.Rstatus;
                 XReview.ReviewName = reviewRequest.ReviewName;
                 XReview.RName = reviewRequest.RName;
@@ -82,6 +83,7 @@ namespace ReviewManagementSystem.Controllers
                 XReview.Rstatus = "Initiate";
                 XReview.ReviewName = reviewInfo.ReviewName;
                 XReview.RName = reviewInfo.RName;
+                XReview.QaName = reviewInfo.QaName;
                 XReview.TargetDate = reviewInfo.TargetDate;
                 XReview.ReviewCycle = reviewInfo.ReviewCycle;
                 XReview.PromotionCycle = reviewInfo.PromotionCycle;

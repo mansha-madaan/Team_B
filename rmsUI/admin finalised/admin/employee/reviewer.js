@@ -118,7 +118,7 @@ function empReviewerReview() {
 ///////////////////////////////////////////////////////////////////////////////////////
 
 function empQaReview() {
-  var url = baseUrl + "/Qar/" + id1.toString();
+  var url = baseUrl + "/Qa/" + id1.toString();
   fetch(url, {
     mode: "cors",
     cache: "no-cache",
