@@ -74,9 +74,12 @@ function initiateReview() {
 
   fetch("https://localhost:44367/api/admin", requestOptions)
     .then((response) => response.text())
-    .then((result) => console.log(result))
+    .then((result) => {
+      allReview()
+      console.log(result)
+    })
     .catch((error) => console.log("error", error));
-  allReview()
+  
 }
 
 
@@ -133,6 +136,8 @@ function allReview() {
         li += `<tr>
 
              <td data-heading="Form Name">${reviewInfo.reviewName}</td>
+
+              <td data-heading="Form Name">${reviewInfo.empId}</td>
               
              <td data-heading="Cycle">${reviewInfo.reviewCycle}</td>
 

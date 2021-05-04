@@ -88,7 +88,7 @@ let fillDataIntoTable = (data) => {
   selfGrowthStatus.value = data.selfGrowthStatus;
   selfFeedback3000.value = data.selfFeed;
   selfFeedbackStatus.value = data.selfFeedStatus;
-  if (data.rstatus === "Closed") {
+  if (data.rstatus === "Reviewer Level") {
     // console.log("setting up values");
     rqEffect3000.value = data.rqEffect;
     rqEffectStatus.value = data.rqEffectStatus;
