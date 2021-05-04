@@ -1,0 +1,8 @@
+selfEffect3000 = document.getElementById("ta-1");
+let selfEffectStatus = document.getElementById("mySelect1");
+let selfLeaderShip3000 = document.getElementById("ta-5");
+let selfLeaderStatus = document.getElementById("mySelect5");
+let selfGrowthShip3000 = document.getElementById("ta-7");
+let selfGrowthStatus = document.getElementById("mySelect7");
+let selfFeedbackShip3000 = document.getElementById("ta-9");
+let selfFeedbackStatus = document.getElementById("mySelect9");

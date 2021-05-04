@@ -3,7 +3,7 @@ let toRedirectPage = "./Login.html";
 //backkedn put y is empid nullable?
 let beforeAjaxText = "Fetching ...";
 let printStringIfEmpty = "Not Filled";
-let reviewerNames = { Aditya: "Aditya", Mansha: "Mansha" };
+let reviewerNames = { Bhanuja: "Bhanuja", Mansha: "Mansha" };
 let qaNames = { Himanshu: "Himanshu", Avneet: "Avneet" };
 
 let mytable = document.getElementById("mytable");

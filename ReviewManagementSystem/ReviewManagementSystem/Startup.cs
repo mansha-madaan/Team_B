@@ -34,7 +34,7 @@ namespace ReviewManagementSystem
         {
             services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
             services.AddTransient<IMailService, Services.MailService>();
-            services.AddDbContext<EmployeeDBContext>(o => o.UseSqlServer("Server=CYG356;Database=EmployeeDB;Trusted_Connection=True;"));
+            services.AddDbContext<EmployeeDBContext>(o => o.UseSqlServer("Server=CYG362;Database=EmployeeDB;Trusted_Connection=True;"));
             services.AddCors(options => options.AddPolicy("AllowAll", p => p.AllowAnyOrigin()
                                                                    .AllowAnyMethod()
                                                                     .AllowAnyHeader()));

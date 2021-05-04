@@ -79,9 +79,10 @@ namespace ReviewManagementSystem.Controllers
             Review XReview = _context.Review.FirstOrDefault(R => R.Rid == id);
             if (XReview.Rstatus == "Initiate")
             {
-                XReview.Rstatus = "Save";
+                XReview.Rstatus = "Initiate";
                 XReview.ReviewName = reviewInfo.ReviewName;
                 XReview.RName = reviewInfo.RName;
+                XReview.QaName = reviewInfo.QaName;
                 XReview.TargetDate = reviewInfo.TargetDate;
                 XReview.ReviewCycle = reviewInfo.ReviewCycle;
                 XReview.PromotionCycle = reviewInfo.PromotionCycle;

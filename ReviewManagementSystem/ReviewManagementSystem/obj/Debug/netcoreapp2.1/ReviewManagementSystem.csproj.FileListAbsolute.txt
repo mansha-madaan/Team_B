@@ -12,3 +12,17 @@ C:\Users\aditya.sharma\source\repos\ReviewManagementSystem\ReviewManagementSyste
 C:\Users\aditya.sharma\source\repos\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.RazorTargetAssemblyInfo.cache
 C:\Users\aditya.sharma\source\repos\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.dll
 C:\Users\aditya.sharma\source\repos\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.pdb
+E:\training\Proj1\last_working\Team_B\ReviewManagementSystem\ReviewManagementSystem\bin\Debug\netcoreapp2.1\ReviewManagementSystem.deps.json
+E:\training\Proj1\last_working\Team_B\ReviewManagementSystem\ReviewManagementSystem\bin\Debug\netcoreapp2.1\ReviewManagementSystem.runtimeconfig.json
+E:\training\Proj1\last_working\Team_B\ReviewManagementSystem\ReviewManagementSystem\bin\Debug\netcoreapp2.1\ReviewManagementSystem.runtimeconfig.dev.json
+E:\training\Proj1\last_working\Team_B\ReviewManagementSystem\ReviewManagementSystem\bin\Debug\netcoreapp2.1\ReviewManagementSystem.dll
+E:\training\Proj1\last_working\Team_B\ReviewManagementSystem\ReviewManagementSystem\bin\Debug\netcoreapp2.1\ReviewManagementSystem.pdb
+E:\training\Proj1\last_working\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.csprojAssemblyReference.cache
+E:\training\Proj1\last_working\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.csproj.CoreCompileInputs.cache
+E:\training\Proj1\last_working\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.RazorAssemblyInfo.cache
+E:\training\Proj1\last_working\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.RazorAssemblyInfo.cs
+E:\training\Proj1\last_working\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.AssemblyInfoInputs.cache
+E:\training\Proj1\last_working\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.AssemblyInfo.cs
+E:\training\Proj1\last_working\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.RazorTargetAssemblyInfo.cache
+E:\training\Proj1\last_working\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.dll
+E:\training\Proj1\last_working\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.pdb
