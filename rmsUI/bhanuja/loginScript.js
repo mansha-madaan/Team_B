@@ -85,11 +85,7 @@ function LoginUser() {
         text: "",
         timer: autoRedirectTime,
         icon: "success",
-      }).then(() => {
-        if (localStorage.getItem("empId") !== 2)
-          window.location.replace(internalPageAfterLogin);
-        else window.location.replace("Admin/Home.html");
-      });
+      }).then(() => window.location.replace(internalPageAfterLogin));
     })
     .catch((err) => {
       console.log(err);
