@@ -158,7 +158,7 @@ function allReview() {
 
              <td data-heading="Form Name">${reviewInfo.reviewName}</td>
 
-              <td data-heading="Form Name">${reviewInfo.empId}</td>
+              <td data-heading="Emp Id">${reviewInfo.empId}</td>
               
              <td data-heading="Cycle">${reviewInfo.reviewCycle}</td>
 
@@ -201,7 +201,7 @@ function showPage() {
              <td ><button class="btn btn-warning" type="submit" onclick="location.href='./recordView.html?rid=${reviewInfo.rid}'">View</button></td> */}
 
 // onclick="location.href='./recordView.html?rid=${reviewInfo.rid}'"s
-function myFunction() {
+function mySearch() {
   var input, filter, table, tr, td, i, txtValue;
   input = document.getElementById("myInput");
   filter = input.value.toUpperCase();
