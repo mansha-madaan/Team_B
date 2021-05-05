@@ -1,5 +1,5 @@
 function allEmp() {
-  myFunction();
+  
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   var requestOptions = {
@@ -86,7 +86,7 @@ function initiateReview() {
 
 function allReview() {
   
-
+  myFunction();
   var url = "https://localhost:44367/api/admin";
 
   fetch(url, {
@@ -163,7 +163,7 @@ function allReview() {
     });
 }
 function myFunction() {
-  myVar = setTimeout(showPage, 3000);
+  myVar = setTimeout(showPage, 500);
 }
 
 function showPage() {

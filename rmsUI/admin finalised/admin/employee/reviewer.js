@@ -72,6 +72,7 @@ function empSelfReview() {
 /////////////////////////////////////////////////////////////////////////////////////////
 
 function empReviewerReview() {
+  myFunction();
   var url = baseUrl + "/reviewer/" + id1.toString();
   fetch(url, {
     mode: "cors",
@@ -119,6 +120,7 @@ function empReviewerReview() {
 ///////////////////////////////////////////////////////////////////////////////////////
 
 function empQaReview() {
+  myFunction();
   var url = baseUrl + "/Qa/" + id1.toString();
   fetch(url, {
     mode: "cors",
@@ -166,6 +168,7 @@ function empQaReview() {
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 function empCloseReview() {
+  myFunction();
   var url = baseUrl + "/self/" + id1.toString();
   fetch(url, {
     mode: "cors",
@@ -264,7 +267,7 @@ function extra(id, st) {
 }
 //////////////
 function myFunction() {
-  myVar = setTimeout(showPage, 3000);
+  myVar = setTimeout(showPage, 500);
 }
 
 function showPage() {
