@@ -19,6 +19,9 @@ function getById() {
       .then((data) => {
         // let li = '';
         // data=JSON.parse(data)
+
+        localStorage.setItem("name", data[0].firstName+" "+ data[0].lastName);
+        console.log(localStorage.getItem("name"));
         console.log(data);
   
         // console.log(user);
@@ -42,10 +45,14 @@ function getById() {
   }
   
   function myFunction() {
+
+
     myVar = setTimeout(showPage, 500);
+
   }
   
   function showPage() {
     document.getElementById("loader").style.display = "none";
     document.getElementById("myDiv").style.display = "block";
   }
+  

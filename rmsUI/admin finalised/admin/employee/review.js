@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    document.getElementById("initial").innerHTML = localStorage.getItem("name");
     $("#sidebar").mCustomScrollbar({
         theme: "minimal"
     });
