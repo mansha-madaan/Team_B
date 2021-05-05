@@ -31,8 +31,8 @@ function getById() {
         document.getElementById("lc").value = data[0].plocation;
         document.getElementById("designation").value = data[0].prole;
         document.getElementById("Total").value = data[0].totalExp;
-        document.getElementById("doj").value = data[0].dateJoin;
-        document.getElementById("subject").value = data[0].skills;
+        //document.getElementById("doj").value = data[0].dateJoin;
+        document.getElementById("subject").innerHTML = data[0].skills;
   
         // do something with data
         console.log(data);
