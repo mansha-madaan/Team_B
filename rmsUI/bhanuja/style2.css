@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cookie&display=swap");
+body{
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
+  background-color: #2a2b38;
+  color: #ffeba7;
+}
+h2{
+  text-align: center;
+}
+* {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   
+    margin: auto;
+    /* word-spacing: 5px; */
+}
+.container {
+    display: flex;
+}
+
+/*.col-sm-4 .card .card-body{
+  background-color: #1F2739;
+}*/
+img{
+  height: 252.66px;
+  height: 252.66px;
+}
+  
+  .card-flip > div {
+    backface-visibility: hidden;
+    transition: transform 300ms;
+    transition-timing-function: linear;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+  }
+  
+  .card-front {
+    transform: rotateY(0deg);
+    background-color: #1F2739;
+    
+  }
+  
+  .card-back {
+    background-color: #1F2739;
+    transform: rotateY(180deg);
+    position: absolute;
+    top: 0;
+  }
+  
+  .card-flip:hover .card-front {
+    transform: rotateY(-180deg);
+  }
+    
+  .card-flip:hover .card-back {
+    transform: rotateY(0deg);
+  }
+
+ 
+
+
+ 
+  

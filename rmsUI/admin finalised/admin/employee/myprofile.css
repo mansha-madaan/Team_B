@@ -226,6 +226,7 @@ a:focus {
 
 #sidebar ul li a {
     padding: 15px;
+    font-weight: lighter;
     font-size: 0.8em;
     display: block;
 }
@@ -258,9 +259,10 @@ a[data-toggle="collapse"] {
 }
 
 ul ul a {
-    font-size: 0.9em !important;
+    font-size: 0.7em !important;
     padding-left: 30px !important;
     background: #6d7fcc;
+    font-weight: lighter;
 }
 
 ul.CTAs {

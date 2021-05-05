@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+s<!DOCTYPE html>
 <html>
 
 <head>
@@ -36,7 +36,7 @@
             </div>
 
             <div class="sidebar-header">
-                <h3><i style='font-size:40px;align-items: center;' class='fas'>&#xf406;</i></h3>
+                <h3><i style='font-size:40px;align-items: center; background-color: #ffeba7; color:black' class='fas'>&#xf406;</i></h3>
             </div>
 
             <ul class="list-unstyled components">
@@ -61,8 +61,8 @@
            
         </nav>
         <div class="form">
-            <input class="search-text" type="text" class="search-data" placeholder="Type to search" required>
-            <a class="search-btn" href="#"></a>
+          <input class="search-text" type="text" id="myInput" onkeyup="mySearch()" class="search-data" placeholder="Type to search" required>
+          <a class="search-btn" href="#"></a>
             <i class="fas fa-search"></i> 
              <!-- <button type="submit" class="fas fa-search"></button>  -->
           </div> 
@@ -73,7 +73,7 @@
            
                 <div class="container-fluid">
 
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info" style="background-color: #ffeba7; color:black">
                         <i class="fas fa-align-left"></i>
                         <span></span>
                     </button>
@@ -89,6 +89,11 @@
 
             
             
+
+               
+            <div class="table-container">
+                <h2  class="table-heading">Intiate Review <span id="s1"><button type="button" class="btn btn-success btn-lg" onclick="initiateReview()">INITIATE</button></span></h2>
+
                 
                 <div class="fixTableHead">
                         <div class="table-container">	
@@ -99,9 +104,11 @@
                               <div class="table-container">
 
                                 <div id="myDiv" class="animate-bottom" >
+
                 
-            
-                <table  class="table">
+                <div class="fixTableHead"> 
+                
+ <table class="table" id="myTable">
                   <thead>
                     <tr>
                       <th>Form Name</th>
@@ -114,7 +121,7 @@
                   </thead>
                   
                   <tbody id="allTableContent">
-                    <!-- <tr>
+                    <tr>
                       <td data-heading="Form Name">Associate 1</td>
                       <td data-heading="Cycle">Arrived Review 2021</td>
                       <td data-heading="TargetData">09-10-21</td>
@@ -130,7 +137,7 @@
                       <td data-heading="#"><a href="#" class="btn">View</a></td>
                     </tr>
             
-                    <tr>
+                   <!---- <tr>
                       <td data-heading="Form Name">Associate 3</td>
                       <td data-heading="Cycle">Arrived Review 2021</td>
                       <td data-heading="TargetData">14-10-21</td>
@@ -168,25 +175,7 @@
     <!-- jQuery Custom Scroller CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#sidebar").mCustomScrollbar({
-                theme: "minimal"
-            });
-
-            $('#dismiss, .overlay').on('click', function () {
-                $('#sidebar').removeClass('active');
-                $('.overlay').removeClass('active');
-            });
-
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').addClass('active');
-                $('.overlay').addClass('active');
-                $('.collapse.in').toggleClass('in');
-                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-            });
-        });
-    </script>
+    
     <script src="/adminjs/AdminReview.js"></script>
     <script src="/adminjs/logout.js"></script>
     

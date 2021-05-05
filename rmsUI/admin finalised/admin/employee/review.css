@@ -13,7 +13,7 @@ body {
 .fixTableHead {
    
     overflow-y: scroll;
-    height: 485px;
+    height: 390px;
     margin: 50px auto 0;
 
   }
@@ -23,6 +23,9 @@ body {
     background-color: #102770;
     top: 0;
   }
+ 
+
+   
 .collapse a{
     background-color: #2a2b38;
 }
@@ -145,6 +148,7 @@ a:focus {
 #sidebar ul li a {
     padding: 15px;
     font-size: 0.8em;
+    font-weight: lighter;
     display: block;
 }
 
@@ -176,9 +180,10 @@ a[data-toggle="collapse"] {
 }
 
 ul ul a {
-    font-size: 0.9em !important;
+    font-size: 0.7em !important;
     padding-left: 30px !important;
     background: #6d7fcc;
+    font-weight: lighter;
 }
 
 ul.CTAs {
@@ -298,7 +303,7 @@ a.article:hover {
     width: 100px;
     text-decoration: none;
     line-height: 20px;
-    font-weight: medium;
+    font-weight: normal;
     justify-content: center;
     text-align:center;
     background-color:#FFeba7;
@@ -337,7 +342,7 @@ a.article:hover {
     padding: 0px 32px;
     text-align: center;
     justify-content: center;
-    font-weight: bold;
+    font-weight: lighter;
   }
   
   .table-container table tr {
