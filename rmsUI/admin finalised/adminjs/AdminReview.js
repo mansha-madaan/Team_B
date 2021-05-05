@@ -31,23 +31,37 @@ function allEmp() {
 
   fetch("https://localhost:44367/api/login", requestOptions)
     .then((res) => res.json())
-    .then((data) => {
+    // .then((data) => {
       
-      data.forEach((empRequest) => {
-        // console.log(user);
-          sendEmail(empRequest.empEmailId);
-      });
+    //   data.forEach((empRequest) => {
+    //     // console.log(user);
+    //       sendEmail(empRequest.empEmailId);
+    //   });
       
 
-      // do something with data
-      console.log(data);
-    }).then(( 
+    //   // do something with data
+    //   console.log(data);
+    // })
+    .then(( (data) => {
       Swal.fire({
-      title: "Review initiated",
-      text: "",
-      timer: 3000,
-      icon: "success",
-    })))
+        title: 'Confirm to initiate a review?',
+        showDenyButton: true,
+        //showCancelButton: true,
+        confirmButtonText: `  Confirm`,
+        denyButtonText: `Cancel`,
+       }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          data.forEach((empRequest) => {
+            // console.log(user);
+              sendEmail(empRequest.empEmailId);
+          });    
+        Swal.fire('Review Initiated', '', 'success')
+        } else if (result.isDenied) {
+        Swal.fire('Review not Initiated', '', 'info')
+        }
+       })
+      }))
     .catch((error) => console.log("error", error));
 }
 

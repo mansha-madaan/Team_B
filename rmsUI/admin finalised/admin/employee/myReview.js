@@ -442,3 +442,8 @@ function showhide5() {
     div.style.display = "block";
   }
 }
+
+function goback()
+{
+    window.history.back();
+}
