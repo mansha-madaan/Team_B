@@ -40,7 +40,7 @@ namespace ReviewManagementSystem.Controllers
             
             var XProfile = _context.ProfileData.FirstOrDefault(R => R.EmpId == id);       
             var name = XProfile.FirstName;
-            var ReviewList = _context.Review.Where(r => r.RName == name && r.Rstatus == "save");
+            var ReviewList = _context.Review.Where(r => r.RName == name);
             if (ReviewList == null)
                 return Ok("no data found");
             return Ok(ReviewList);

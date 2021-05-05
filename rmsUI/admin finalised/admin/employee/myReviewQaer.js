@@ -356,7 +356,7 @@ let checkAndSave = () => {
     // selfFeedStatus
   };
   console.log(JSON.stringify(record));
-  fetch(baseUrl + "/Reviewer/" + params.get("rid"), {
+  fetch(baseUrl + "/QA/" + params.get("rid"), {
     method: "PUT",
     mode: "cors", // no-cors, *cors, same-origin
     cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
