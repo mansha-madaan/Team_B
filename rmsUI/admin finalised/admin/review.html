@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Collapsible sidebar using Bootstrap 4</title>
+    <title>Initiate Review</title>
     <link rel="stylesheet" href="./review.css">
    
     
@@ -90,15 +90,22 @@
             
             
                 
-            <div class="table-container">
-                <h2  class="table-heading">Intiate Review <span id="s1"><button type="button" class="btn btn-success btn-lg" onclick="initiateReview()">INITIATE</button></span></h2>
-                
+                <div class="fixTableHead">
+                        <div class="table-container">	
+                 <h2  class="table-heading">Intiate Review <span id="s1"><button type="button" class="btn btn-success btn-lg" onclick="initiateReview()">INITIATE</button></span></h2>
+	
+                                <div id="loader"></div>
+
+                              <div class="table-container">
+
+                                <div id="myDiv" class="animate-bottom" >
                 
             
                 <table  class="table">
                   <thead>
                     <tr>
                       <th>Form Name</th>
+                      <th>Employ Id</th>
                       <th>Cycle</th>
                       <th>Target Date</th>
                       <th>Status</th>
@@ -146,17 +153,8 @@
                     </tr> -->
                   </tbody>
                 </table>
-               <center>
-                <div class="page">
-                    <a href="#">&laquo;</a>
-                    <a href="#" class="active">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#">4</a>
-                    <a href="#">5</a>
-                    <a href="#">&raquo;</a>
-                </div>
-            </center>
+              
+            </div>
             </div>
 
     <div class="overlay"></div>

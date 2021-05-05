@@ -338,6 +338,7 @@ let checkAndSave = () => {
     .reverse()
     .join("-");
   let record = {
+    QaName: qaName.textContent,
     RqEffect: rqEffect3000.value,
     RqEffectStatus: rqEffectStatus.value,
     RqLead: rqLeader3000.value,
@@ -348,6 +349,8 @@ let checkAndSave = () => {
     RqGrowthStatus: rqGrowthStatus.value,
     // SelfEffect:  //these fields are just adjacent reviewer fields
     // rqEffectStatus
+
+   
     // SelfLead:
     // SelfLeadStatus
     // SelfGrowth

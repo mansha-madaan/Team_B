@@ -88,7 +88,7 @@ let fillDataIntoTable = (data) => {
   selfGrowthStatus.value = data.selfGrowthStatus;
   selfFeedback3000.value = data.selfFeed;
   selfFeedbackStatus.value = data.selfFeedStatus;
-  if (data.rstatus === "Closed") {
+  if (data.rstatus === "Reviewer Level") {
     // console.log("setting up values");
     rqEffect3000.value = data.rqEffect;
     rqEffectStatus.value = data.rqEffectStatus;
@@ -356,7 +356,7 @@ let checkAndSave = () => {
     // selfFeedStatus
   };
   console.log(JSON.stringify(record));
-  fetch(baseUrl + "/Reviewer/" + params.get("rid"), {
+  fetch(baseUrl + "/QA/" + params.get("rid"), {
     method: "PUT",
     mode: "cors", // no-cors, *cors, same-origin
     cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached

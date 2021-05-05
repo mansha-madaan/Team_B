@@ -22,6 +22,7 @@ var id1 = localStorage.getItem("empId");
 ////////////////////////////////////////////////////////////////////////////////////////
 
 function empSelfReview() {
+  myFunction();
   var url = baseUrl + "/self/" + id1.toString();
   fetch(url, {
     mode: "cors",
@@ -71,6 +72,7 @@ function empSelfReview() {
 /////////////////////////////////////////////////////////////////////////////////////////
 
 function empReviewerReview() {
+  myFunction();
   var url = baseUrl + "/reviewer/" + id1.toString();
   fetch(url, {
     mode: "cors",
@@ -118,7 +120,8 @@ function empReviewerReview() {
 ///////////////////////////////////////////////////////////////////////////////////////
 
 function empQaReview() {
-  var url = baseUrl + "/Qar/" + id1.toString();
+  myFunction();
+  var url = baseUrl + "/Qa/" + id1.toString();
   fetch(url, {
     mode: "cors",
     cache: "no-cache",
@@ -165,6 +168,7 @@ function empQaReview() {
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 function empCloseReview() {
+  myFunction();
   var url = baseUrl + "/self/" + id1.toString();
   fetch(url, {
     mode: "cors",
@@ -261,3 +265,13 @@ function extra(id, st) {
       });
   }
 }
+//////////////
+function myFunction() {
+  myVar = setTimeout(showPage, 500);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+

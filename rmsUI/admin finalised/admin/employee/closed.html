@@ -62,7 +62,7 @@
                 </ul>
             </li>
             <li>
-                <a href="./Login.html" onclick= "localStorage.removeItem('token')"><i class="fas fa-sign-out-alt"></i>  Logout</a>
+                <a href="" onclick= "logoutuser()"><i class="fas fa-sign-out-alt"></i>  Logout</a>
             </li>
             
         </ul>
@@ -102,7 +102,8 @@
         <div class="table-container">
             <h2 class="table-heading">Closed</h2>
             
-            
+             <div id="loader"></div>
+                <div id="myDiv" class="animate-bottom" >
         
             <table class="table">
               <thead>
@@ -168,7 +169,7 @@
         </center>-->
         </div>
     </div>
-
+            </div>
 
            
                
@@ -183,9 +184,9 @@
     <!-- jQuery Custom Scroller CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
-    <script type="text/javascript" src="review.js">
-        
-    </script>
+    <script type="text/javascript" src="review.js"></script>
+    <script src="/admin/employee/reviewer.js"></script>
+    <script src="/adminjs/logout.js"></script>
 </body>
 
 </html>
