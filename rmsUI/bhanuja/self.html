@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Collapsible sidebar using Bootstrap 4</title>
+    <title>Self Review</title>
     <link rel="stylesheet" href="./review.css">
    
     
@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body onload="empSelfReview()">
+<body  onload="empSelfReview()">
     
 
      <div class="wrapper">
@@ -34,14 +34,14 @@
                 <i class="fas fa-arrow-left"></i>
             </div>
 
-            <div class="sidebar-header" >
-                <h3><i style='font-size:40px;align-items: center;' class='fas' style="background-color :#ffeba7;">&#xf406;</i></h3>
+            <div class="sidebar-header">
+                <h3><i style='font-size:40px;align-items: center;' class='fas'>&#xf406;</i></h3>
             </div>
 
             <ul class="list-unstyled components">
                 <p>Initials</p>
                 <li >
-                    <a href="./home.html"><i class="fas fa-home"></i>  Home</a>
+                    <a href="#" data-toggle="collapse" aria-expanded="false"><i class="fas fa-home"></i>  Home</a>
                    
                 </li>
                 <li>
@@ -83,7 +83,7 @@
            
                 <div class="container-fluid">
 
-                    <button type="button" id="sidebarCollapse" class="btn btn-info" style="background-color: #ffeba7; color:black;">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
                         <i class="fas fa-align-left"></i>
                         <span></span>
                     </button>
@@ -99,7 +99,7 @@
 
             
             
-                <div class="fixTableHead"> 
+                
             <div class="table-container">
                 <h2 class="table-heading">Self Review</h2>
                 
@@ -117,61 +117,10 @@
                   </thead>
                   
                   <tbody id="selfTableContent">
-                    <!-- <tr>
-                      <td data-heading="Form Name">Associate 1</td>
-                      <td data-heading="Cycle">Arrived Review 2021</td>
-                      <td data-heading="TargetData">09-10-21</td>
-                      <td data-heading="Status">Close</td>
-                      <td data-heading="Action"><a href="#" class="btn">View</a></td>
-                    </tr>
-            
-                    <tr>
-                      <td data-heading="Form Name">Associate 2</td>
-                      <td data-heading="Cycle">Arrived Review 2021</td>
-                      <td data-heading="TargetData">21-10-20</td>
-                      <td data-heading="Status">Close</td>
-                      <td data-heading="#"><a href="#" class="btn">View</a></td>
-                    </tr>
-            
-                    <tr>
-                      <td data-heading="Form Name">Associate 3</td>
-                      <td data-heading="Cycle">Arrived Review 2021</td>
-                      <td data-heading="TargetData">14-10-21</td>
-                      <td data-heading="Status">Open</td>
-                      <td data-heading="#"><a href="#" class="btn">View</a></td>
-                    </tr>
-                    <tr>
-                      <td data-heading="Form Name">Associate 3</td>
-                      <td data-heading="Cycle">Arrived Review 2021</td>
-                      <td data-heading="TargetData">14-10-21</td>
-                      <td data-heading="Status">Open</td>
-                      <td data-heading="#"><a href="#" class="btn">View</a></td>
-                    </tr>
-                    <tr>
-                      <td data-heading="Form Name">Associate 3</td>
-                      <td data-heading="Cycle">Arrived Review 2021</td>
-                      <td data-heading="TargetData">14-10-21</td>
-                      <td data-heading="Status">Open</td>
-                      <td data-heading="#"><a href="#" class="btn">View</a></td>
-                    </tr>
-                    <tr>
-                        <td data-heading="Form Name">Associate 3</td>
-                        <td data-heading="Cycle">Arrived Review 2021</td>
-                        <td data-heading="TargetData">14-10-21</td>
-                        <td data-heading="Status">Open</td>
-                        <td data-heading="#"><a href="#" class="btn">View</a></td>
-                      </tr>
-                      <tr>
-                        <td data-heading="Form Name">Associate 3</td>
-                        <td data-heading="Cycle">Arrived Review 2021</td>
-                        <td data-heading="TargetData">14-10-21</td>
-                        <td data-heading="Status">Open</td>
-                        <td data-heading="#"><a href="#" class="btn">View</a></td>
-                      </tr> -->
+                    
                   </tbody>
                 </table>
-                </div>
-               <!--<center>
+               <center>
                 <div class="page">
                     <a href="#">&laquo;</a>
                     <a href="#" class="active">1</a>
@@ -181,20 +130,9 @@
                     <a href="#">5</a>
                     <a href="#">&raquo;</a>
                 </div>
-            </center>-->
+            </center>
             </div>
-            
-                
-
-
-
-
-
-
-
-            
-
-    <div class="overlay"></div>
+             <div class="overlay"></div>
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -205,8 +143,9 @@
     <!-- jQuery Custom Scroller CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
-    <script src="./review.js"></script>
-    <script src="./reviewer.js"></script>
+    <script type="text/javascript" src="reviewer.js">
+        
+    </script>
 </body>
 
 </html>

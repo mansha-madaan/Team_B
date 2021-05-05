@@ -1,4 +1,25 @@
+$(document).ready(function () {
+  $("#sidebar").mCustomScrollbar({
+      theme: "minimal"
+  });
+
+  $('#dismiss, .overlay').on('click', function () {
+      $('#sidebar').removeClass('active');
+      $('.overlay').removeClass('active');
+  });
+
+  $('#sidebarCollapse').on('click', function () {
+      $('#sidebar').addClass('active');
+      $('.overlay').addClass('active');
+      $('.collapse.in').toggleClass('in');
+      $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+  });
+})
+
+
+
 function allEmp() {
+  
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   var requestOptions = {
@@ -74,15 +95,18 @@ function initiateReview() {
 
   fetch("https://localhost:44367/api/admin", requestOptions)
     .then((response) => response.text())
-    .then((result) => console.log(result))
+    .then((result) => {
+      allReview()
+      console.log(result)
+    })
     .catch((error) => console.log("error", error));
-  allReview()
+  
 }
 
 
 function allReview() {
   
-
+  myFunction();
   var url = "https://localhost:44367/api/admin";
 
   fetch(url, {
@@ -133,6 +157,8 @@ function allReview() {
         li += `<tr>
 
              <td data-heading="Form Name">${reviewInfo.reviewName}</td>
+
+              <td data-heading="Emp Id">${reviewInfo.empId}</td>
               
              <td data-heading="Cycle">${reviewInfo.reviewCycle}</td>
 
@@ -156,7 +182,14 @@ function allReview() {
       console.log("Looks like there was a problem: \n", error);
     });
 }
+function myFunction() {
+  myVar = setTimeout(showPage, 500);
+}
 
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
 {/* <td data-heading="Form Name">${reviewInfo.reviewName}</td>
               
              <td data-heading="Cycle">${reviewInfo.reviewCycle}</td>
@@ -168,3 +201,21 @@ function allReview() {
              <td ><button class="btn btn-warning" type="submit" onclick="location.href='./recordView.html?rid=${reviewInfo.rid}'">View</button></td> */}
 
 // onclick="location.href='./recordView.html?rid=${reviewInfo.rid}'"s
+function mySearch() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }      
+  }
+}

@@ -7,8 +7,8 @@ let reviewerNames = { Aditya: "Aditya", Mansha: "Mansha" };
 let qaNames = { Himanshu: "Himanshu", Avneet: "Avneet" };
 
 let mytable = document.getElementById("mytable");
-let classButton = ["fa", "fa-edit", "toremove"];
-let saveButtonClass = ["fa", "fa-save", "toremove"];
+let classButton = ["fa", "fa-edit","fa-1x","btn","btn-secondary", "toremove"];
+let saveButtonClass = ["fa", "fa-save","fa-2x","btn","btn-secondary", "toremove"];
 let disabledRditButton = "d-none";
 let toShow = false;
 let tableDiv = document.getElementsByClassName("back-container");
@@ -88,7 +88,7 @@ let fillDataIntoTable = (data) => {
   selfGrowthStatus.value = data.selfGrowthStatus;
   selfFeedback3000.value = data.selfFeed;
   selfFeedbackStatus.value = data.selfFeedStatus;
-  if (data.rstatus === "Closed") {
+  if (data.rstatus === "Reviewer Level") {
     // console.log("setting up values");
     rqEffect3000.value = data.rqEffect;
     rqEffectStatus.value = data.rqEffectStatus;
@@ -356,7 +356,7 @@ let checkAndSave = () => {
     // selfFeedStatus
   };
   console.log(JSON.stringify(record));
-  fetch(baseUrl + "/Reviewer/" + params.get("rid"), {
+  fetch(baseUrl + "/QA/" + params.get("rid"), {
     method: "PUT",
     mode: "cors", // no-cors, *cors, same-origin
     cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached

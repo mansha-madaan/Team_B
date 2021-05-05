@@ -13,7 +13,7 @@ body {
 .fixTableHead {
    
     overflow-y: scroll;
-    height: 485px;
+    height: 390px;
     margin: 50px auto 0;
 
   }
@@ -23,6 +23,9 @@ body {
     background-color: #102770;
     top: 0;
   }
+ 
+
+   
 .collapse a{
     background-color: #2a2b38;
 }
@@ -145,6 +148,7 @@ a:focus {
 #sidebar ul li a {
     padding: 15px;
     font-size: 0.8em;
+    font-weight: lighter;
     display: block;
 }
 
@@ -176,9 +180,10 @@ a[data-toggle="collapse"] {
 }
 
 ul ul a {
-    font-size: 0.9em !important;
+    font-size: 0.7em !important;
     padding-left: 30px !important;
     background: #6d7fcc;
+    font-weight: lighter;
 }
 
 ul.CTAs {
@@ -298,7 +303,7 @@ a.article:hover {
     width: 100px;
     text-decoration: none;
     line-height: 20px;
-    font-weight: medium;
+    font-weight: normal;
     justify-content: center;
     text-align:center;
     background-color:#FFeba7;
@@ -337,7 +342,7 @@ a.article:hover {
     padding: 0px 32px;
     text-align: center;
     justify-content: center;
-    font-weight: bold;
+    font-weight: lighter;
   }
   
   .table-container table tr {
@@ -395,4 +400,53 @@ a.article:hover {
   .btnbtn-info{
       background-color: #FFeba7;
       color: black;
+  }
+ /* this is for loader*/
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 120px;
+    height: 120px;
+    margin: -76px 0 0 -76px;
+    border: 3px solid #1F2739;
+    border-radius: 50%;
+    border-top: 3px solid #ffeba7;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+  
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Add animation to "page content" */
+  .animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+  }
+  
+  @-webkit-keyframes animatebottom {
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+  }
+  
+  @keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+  }
+
+  #myDiv {
+    display: none;
+    
   }

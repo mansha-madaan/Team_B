@@ -3,12 +3,12 @@ let toRedirectPage = "./Login.html";
 //backkedn put y is empid nullable?
 let beforeAjaxText = "Fetching ...";
 let printStringIfEmpty = "Not Filled";
-let reviewerNames = { Aditya: "Aditya", Mansha: "Mansha" };
+let reviewerNames = { Bhanuja: "Bhanuja", Mansha: "Mansha" };
 let qaNames = { Himanshu: "Himanshu", Avneet: "Avneet" };
 
 let mytable = document.getElementById("mytable");
-let classButton = ["fa", "fa-edit", "toremove"];
-let saveButtonClass = ["fa", "fa-save", "toremove"];
+let classButton = ["fa", "fa-edit","fa-1x","btn","btn-secondary", "toremove"];
+let saveButtonClass = ["fa", "fa-save", "fa-2x","btn","btn-secondary","toremove"];
 let disabledRditButton = "d-none";
 let toShow = false;
 let tableDiv = document.getElementsByClassName("back-container");
@@ -331,7 +331,7 @@ let checkAndSave = () => {
     // selfFeedStatus: selfFeedbackStatus.value,
   };
   console.log(JSON.stringify(record));
-  fetch(baseUrl + "/self/" + params.get("rid"), {
+  fetch(baseUrl + "/admin/" + params.get("rid"), {
     method: "PUT",
     mode: "cors", // no-cors, *cors, same-origin
     cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached

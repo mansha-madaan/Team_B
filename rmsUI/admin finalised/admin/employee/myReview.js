@@ -3,12 +3,12 @@ let toRedirectPage = "./Login.html";
 //backkedn put y is empid nullable?
 let beforeAjaxText = "Fetching ...";
 let printStringIfEmpty = "Not Filled";
-let reviewerNames = { Aditya: "Aditya", Mansha: "Mansha" };
+let reviewerNames = { Bhanuja: "Bhanuja", Mansha: "Mansha" };
 let qaNames = { Himanshu: "Himanshu", Avneet: "Avneet" };
 
 let mytable = document.getElementById("mytable");
-let classButton = ["fa", "fa-edit", "toremove"];
-let saveButtonClass = ["fa", "fa-save", "toremove"];
+let classButton = ["fa", "fa-edit","fa-2x","btn","btn-secondary","toremove"];
+let saveButtonClass = ["fa", "fa-save","fa-2x","btn","btn-secondary", "toremove"];
 let disabledRditButton = "d-none";
 let toShow = false;
 let tableDiv = document.getElementsByClassName("back-container");
@@ -306,12 +306,13 @@ let checkAndSave = () => {
     .reverse()
     .join("-");
   let record = {
-    // ReviewName: reviewName.textContent,
-    // TargetDate: targetDate.textContent,
-    // ReviewCycle: reviewCycle.textContent,
-    // PromotionCycle: promotionCycle.textContent,
-    // RName: rName.textContent,
-    // QaName: qaName.textContent,
+
+    ReviewName: reviewName.textContent,
+    TargetDate: targetDate.textContent,
+    ReviewCycle: reviewCycle.textContent,
+    PromotionCycle: promotionCycle.textContent,
+    RName: rName.textContent,
+    QaName: qaName.textContent,
     SelfEffect: selfEffect3000.value,
     SelfEffectStatus: selfEffectStatus.value,
     SelfLead: selfLeader3000.value,

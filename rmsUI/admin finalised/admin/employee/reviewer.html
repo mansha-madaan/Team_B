@@ -39,7 +39,7 @@
            </div>
 
            <ul class="list-unstyled components">
-               <p>Initials</p>
+               <p id="initial">Initials</p>
                <li >
                    <a href="./home.html"><i class="fas fa-home"></i>  Home</a>
                   
@@ -63,7 +63,7 @@
                    </ul>
                </li>
                <li>
-                   <a onclick= "logoutuser()"><i class="fas fa-sign-out-alt"></i>  Logout</a>
+                   <a style="color: #007bff" onclick= "logoutuser()"><i class="fas fa-sign-out-alt"></i>  Logout</a>
                </li>
                
            </ul>
@@ -71,8 +71,8 @@
           
        </nav>
        <div class="form">
-           <input class="search-text" type="text" class="search-data" placeholder="Type to search" required>
-           <a class="search-btn" href="#"></a>
+        <input class="search-text" type="text" id="myInput" onkeyup="mySearch()" class="search-data" placeholder="Type to search" required>
+        <a class="search-btn" href="#"></a>
            <i class="fas fa-search"></i> 
             <!-- <button type="submit" class="fas fa-search"></button>  -->
          </div> 
@@ -98,14 +98,20 @@
 
 
            
-               <div class="fixTableHead"> 
+                
                
            <div class="table-container">
                <h2 class="table-heading">Pending Review as Reviewer</h2>
                
-               
+
+               <div class="fixTableHead">
+
+                <div id="loader"></div>
+                <div id="myDiv" class="animate-bottom" >
+
            
-               <table class="table">
+               
+ <table class="table" id="myTable">
                  <thead>
                    <tr>
                      <th>Form Name</th>
@@ -169,7 +175,7 @@
            </center>-->
            </div>
            </div>
-           
+           </div>
                
    <div class="overlay"></div>
 

@@ -7,8 +7,8 @@ let reviewerNames = { Aditya: "Aditya", Mansha: "Mansha" };
 let qaNames = { Himanshu: "Himanshu", Avneet: "Avneet" };
 
 let mytable = document.getElementById("mytable");
-let classButton = ["fa", "fa-edit", "toremove"];
-let saveButtonClass = ["fa", "fa-save", "toremove"];
+let classButton = ["fa","fa-edit","fa-2x","btn","btn-secondary", "toremove"];
+let saveButtonClass = ["fa", "fa-save","fa-2x","btn","btn-secondary", "toremove"];
 let disabledRditButton = "d-none";
 let toShow = false;
 let tableDiv = document.getElementsByClassName("back-container");
@@ -338,6 +338,7 @@ let checkAndSave = () => {
     .reverse()
     .join("-");
   let record = {
+    QaName: qaName.textContent,
     RqEffect: rqEffect3000.value,
     RqEffectStatus: rqEffectStatus.value,
     RqLead: rqLeader3000.value,
@@ -348,6 +349,8 @@ let checkAndSave = () => {
     RqGrowthStatus: rqGrowthStatus.value,
     // SelfEffect:  //these fields are just adjacent reviewer fields
     // rqEffectStatus
+
+   
     // SelfLead:
     // SelfLeadStatus
     // SelfGrowth
