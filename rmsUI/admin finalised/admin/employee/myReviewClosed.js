@@ -122,7 +122,7 @@ let fillDataIntoTable = (data) => {
 };
 //to do add loader before dom content load and make listener after ajax call
 let doWorkAfterDom = () => {
-  myFunction();
+  
   fetch(baseUrl + "/reviewlist/" + params.get("rid"), {
     method: "GET",
     mode: "cors", // no-cors, *cors, same-origin
@@ -473,11 +473,7 @@ function showhide5() {
     div.style.display = "block";
   }
 }
-function myFunction() {
-  myVar = setTimeout(showPage, 500);
-}
 
-function showPage() {
-  document.getElementById("loader").style.display = "none";
-  document.getElementById("myDiv").style.display = "block";
+function goback() {
+  window.history.back();
 }
