@@ -10,22 +10,6 @@ body {
           
       
 }
-.fixTableHead {
-   
-    overflow-y: scroll;
-    height: 390px;
-    margin: 50px auto 0;
-
-  }
-  .fixTableHead thead th {
-    position: sticky;
-    z-index:10 ;
-    background-color: #102770;
-    top: 0;
-  }
- 
-
-   
 .collapse a{
     background-color: #2a2b38;
 }
@@ -47,7 +31,7 @@ a,
 a:hover,
 a:focus {
     color:#C4c3cA;
-    text-decoration: none!important;
+    text-decoration: none;
     transition: all 0.3s;
 }
 .bg-light {
@@ -75,14 +59,6 @@ a:focus {
     margin: 40px 0;
 }
 
-#s1{
-    margin-left: 35%;
-}
-@media(max-width:500px){
-    #s1{
-        margin-left:0px;
-    }
-}
 /* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
@@ -114,8 +90,8 @@ a:focus {
     text-align: center;
     background:#102770;
     position: absolute;
-    top: 20px;
-    right: 24px;
+    top: 10px;
+    right: 10px;
     cursor: pointer;
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
@@ -155,8 +131,7 @@ a:focus {
 
 #sidebar ul li a {
     padding: 15px;
-    font-size: 0.8em;
-    font-weight: lighter;
+    font-size: 1.1em;
     display: block;
 }
 
@@ -171,7 +146,9 @@ a[aria-expanded="true"] {
     background: #ffeba7;
 }
 .list-unstyled {
-    font-size: 1.5rem;
+    font-size: 1rem;
+    text-align: center;
+    align-items: center;
     font-family: 'Poppins',sans-serif;
 }
 
@@ -188,10 +165,9 @@ a[data-toggle="collapse"] {
 }
 
 ul ul a {
-    font-size: 0.7em !important;
+    font-size: 0.9em !important;
     padding-left: 30px !important;
     background: #6d7fcc;
-    font-weight: lighter;
 }
 
 ul.CTAs {
@@ -205,7 +181,10 @@ ul.CTAs a {
     border-radius: 5px;
     margin-bottom: 5px;
 }
-
+a.download {
+    background: #fff;
+    color: #7386D5;
+}
 
 a.article,
 a.article:hover {
@@ -219,7 +198,7 @@ a.article:hover {
 
 #content {
    
-    background-color:  #2a2b38;
+    background-color: #2a2b38;
     background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
     width: 100%;
     padding: 20px;
@@ -282,13 +261,10 @@ a.article:hover {
 
   .table-container {
     padding: 0 10%;
-   
+    margin: 40px auto 0;
     
    
    
-  }
-  .table td{
-      vertical-align: middle!important;
   }
  
   
@@ -305,29 +281,21 @@ a.article:hover {
     
     
   }
-  @media(max-width:500px){
-    .table-container h2.table-heading {
-        font-size: 35px ;
-
-    }
-
-  }
 
   .table tbody tr td .btn{
 
-    width: 100px;
+    width: 130px;
     text-decoration: none;
-    line-height: 20px;
-    font-weight: normal;
-    justify-content: center;
+    line-height: 35px;
+    font-weight: medium;
     text-align:center;
     background-color:#FFeba7;
     display:inline-block ;
-    text-align: center;
+    vertical-align: middle;
     user-select: none;
     border:1px solid transparent;
     font-size: 14px;
-    color:black;
+    color: black;
     transition: all 200ms linear;
     letter-spacing: 1px;
   }
@@ -336,13 +304,12 @@ a.article:hover {
       color: white;
   }
   
-
   .table-container table {
     width: 100%;
     font-family: 'Poppins', sans-serif;
     transform-style: preserve-3d;
     color: #222;
-    padding: 14px;
+    padding: 24px;
     box-shadow: 0 4px 30px -10px rgba(0, 0, 0, 0.4);
     border-collapse: collapse;
     
@@ -355,19 +322,15 @@ a.article:hover {
   
   .table-container table td,
   .table-container table th {
-    padding: 0px 32px;
+    padding: 16px 32px;
     text-align: center;
-    justify-content: center;
-    font-weight: lighter;
+    font-weight: bold;
   }
   
   .table-container table tr {
     border-bottom: 5px solid black;
     color: #c4c3ca;
-    background-color :#1f2029;
-    justify-content: center;
-    text-align: center;
-    line-height: 50px;
+    background-color: #1f2029;
     
   }
   .table-container table tbody tr:hover 
@@ -385,7 +348,7 @@ a.article:hover {
     .table-container table td::before {
       content: attr(data-heading) ": ";
       font-weight: bold;
-      font-size: 15px;
+      font-size: 20px;
     }
  
   }
@@ -413,86 +376,4 @@ a.article:hover {
 
 
   }
-  .btnbtn-info{
-      background-color: #FFeba7;
-      color: black;
-
-   }
-   .page{
-       display: inline-block;
-       align-items: center;
-       justify-content: center;
- 
-   }
-   .page a{
-       color: black ;
-       float: left;
-       padding: 8px 16px;
-       text-decoration: none;
- 
-   }
-   .page a.active{
-       background-color: blue;
-       color: white;
-       border-radius: 5px;
-   }
-   .page a:hover:not(.active){
-       border-color: yellow;
-       border-radius: 5px;
- 
- 
-   }
-    .btn-info{
-       background-color: #FFeba7;
-       color: black;
-   }
-/* this is for loader*/
-#loader {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    z-index: 1;
-    width: 120px;
-    height: 120px;
-    margin: -76px 0 0 -76px;
-    border: 3px solid #1F2739;
-    border-radius: 50%;
-    border-top: 3px solid #ffeba7;
-    -webkit-animation: spin 2s linear infinite;
-    animation: spin 2s linear infinite;
-  }
   
-  @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
-  /* Add animation to "page content" */
-  .animate-bottom {
-    position: relative;
-    -webkit-animation-name: animatebottom;
-    -webkit-animation-duration: 1s;
-    animation-name: animatebottom;
-    animation-duration: 1s
-  }
-  
-  @-webkit-keyframes animatebottom {
-    from { bottom:-100px; opacity:0 } 
-    to { bottom:0px; opacity:1 }
-  }
-  
-  @keyframes animatebottom { 
-    from{ bottom:-100px; opacity:0 } 
-    to{ bottom:0; opacity:1 }
-  }
-
-  #myDiv {
-    display: none;
-    
-
-  }

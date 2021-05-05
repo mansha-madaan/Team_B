@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body onload="empSelfReview()">
+<body>
     
 
      <div class="wrapper">
@@ -34,18 +34,18 @@
                 <i class="fas fa-arrow-left"></i>
             </div>
 
-            <div class="sidebar-header" >
-                <h3><i style='font-size:40px;align-items: center;' class='fas' style="background-color :#ffeba7;">&#xf406;</i></h3>
+            <div class="sidebar-header">
+                <h3><i style='font-size:40px;align-items: center;' class='fas'>&#xf406;</i></h3>
             </div>
 
             <ul class="list-unstyled components">
-                <p id="initial">Initials</p>
+                <p>Initials</p>
                 <li >
-                    <a href="./home.html"><i class="fas fa-home"></i>  Home</a>
+                    <a href="#" data-toggle="collapse" aria-expanded="false"><i class="fas fa-home"></i>  Home</a>
                    
                 </li>
                 <li>
-                    <a href="./myprofile.html"><i class="fas fa-user-circle"></i>  My Profile</a>
+                    <a href="#"><i class="fas fa-user-circle"></i>  My Profile</a>
                     <a href="#review" data-toggle="collapse" aria-expanded="false"><i class="fas fa-trophy"></i> My Review</a>
                     <ul class="collapse list-unstyled" id="review">
                         <li>
@@ -63,7 +63,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a style="color: #007bff ;cursor: pointer;"  onclick= "logoutuser()"><i class="fas fa-sign-out-alt"></i>  Logout</a>
+                    <a href="#"><i class="fas fa-sign-out-alt"></i>  Logout</a>
                 </li>
                 
             </ul>
@@ -71,7 +71,7 @@
            
         </nav>
         <div class="form">
-            <input class="search-text" type="text" id="myInput" onkeyup="mySearch()" class="search-data" placeholder="Type to search" required>
+            <input class="search-text" type="text" class="search-data" placeholder="Type to search" required>
             <a class="search-btn" href="#"></a>
             <i class="fas fa-search"></i> 
              <!-- <button type="submit" class="fas fa-search"></button>  -->
@@ -83,7 +83,7 @@
            
                 <div class="container-fluid">
 
-                    <button type="button" id="sidebarCollapse" class="btn btn-info" style="background-color: #ffeba7; color:black;">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
                         <i class="fas fa-align-left"></i>
                         <span></span>
                     </button>
@@ -99,19 +99,13 @@
 
             
             
-               
+                
             <div class="table-container">
                 <h2 class="table-heading">Self Review</h2>
                 
-
-                <div class="fixTableHead" > 
-
-                <div id="loader"></div>
-                <div id="myDiv" class="animate-bottom" >
-
+                
             
-               
-                <table class="table" id="myTable">
+                <table class="table">
                   <thead>
                     <tr>
                       <th>Form Name</th>
@@ -122,8 +116,8 @@
                     </tr>
                   </thead>
                   
-                  <tbody id="selfTableContent">
-                 <!----<tr>
+                  <tbody>
+                    <tr>
                       <td data-heading="Form Name">Associate 1</td>
                       <td data-heading="Cycle">Arrived Review 2021</td>
                       <td data-heading="TargetData">09-10-21</td>
@@ -131,7 +125,7 @@
                       <td data-heading="Action"><a href="#" class="btn">View</a></td>
                     </tr>
             
-               <tr>
+                    <tr>
                       <td data-heading="Form Name">Associate 2</td>
                       <td data-heading="Cycle">Arrived Review 2021</td>
                       <td data-heading="TargetData">21-10-20</td>
@@ -160,28 +154,111 @@
                       <td data-heading="Status">Open</td>
                       <td data-heading="#"><a href="#" class="btn">View</a></td>
                     </tr>
-                    <tr>
-                        <td data-heading="Form Name">Associate 3</td>
-                        <td data-heading="Cycle">Arrived Review 2021</td>
-                        <td data-heading="TargetData">14-10-21</td>
-                        <td data-heading="Status">Open</td>
-                        <td data-heading="#"><a href="#" class="btn">View</a></td>
-                      </tr>
-                      <tr>
-                        <td data-heading="Form Name">Associate 3</td>
-                        <td data-heading="Cycle">Arrived Review 2021</td>
-                        <td data-heading="TargetData">14-10-21</td>
-                        <td data-heading="Status">Open</td>
-                        <td data-heading="#"><a href="#" class="btn">View</a></td>
-                      </tr> -->
                   </tbody>
                 </table>
+               <center>
+                <div class="page">
+                    <a href="#">&laquo;</a>
+                    <a href="#" class="active">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <a href="#">&raquo;</a>
                 </div>
-              
+            </center>
             </div>
-           </div>
             
                 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -202,10 +279,25 @@
     <!-- jQuery Custom Scroller CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
-    
-    <script src="./reviewer.js"></script>
-    <script src="./review.js"></script>
-    <script src="/adminjs/logout.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
 </body>
 
 </html>
