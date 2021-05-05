@@ -12,3 +12,17 @@ C:\Users\aditya.sharma\source\repos\ReviewManagementSystem\ReviewManagementSyste
 C:\Users\aditya.sharma\source\repos\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.RazorTargetAssemblyInfo.cache
 C:\Users\aditya.sharma\source\repos\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.dll
 C:\Users\aditya.sharma\source\repos\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.pdb
+C:\Users\aditya.sharma\OneDrive - Cyber Group\Desktop\RMS\Team_B\ReviewManagementSystem\ReviewManagementSystem\bin\Debug\netcoreapp2.1\ReviewManagementSystem.deps.json
+C:\Users\aditya.sharma\OneDrive - Cyber Group\Desktop\RMS\Team_B\ReviewManagementSystem\ReviewManagementSystem\bin\Debug\netcoreapp2.1\ReviewManagementSystem.runtimeconfig.json
+C:\Users\aditya.sharma\OneDrive - Cyber Group\Desktop\RMS\Team_B\ReviewManagementSystem\ReviewManagementSystem\bin\Debug\netcoreapp2.1\ReviewManagementSystem.runtimeconfig.dev.json
+C:\Users\aditya.sharma\OneDrive - Cyber Group\Desktop\RMS\Team_B\ReviewManagementSystem\ReviewManagementSystem\bin\Debug\netcoreapp2.1\ReviewManagementSystem.dll
+C:\Users\aditya.sharma\OneDrive - Cyber Group\Desktop\RMS\Team_B\ReviewManagementSystem\ReviewManagementSystem\bin\Debug\netcoreapp2.1\ReviewManagementSystem.pdb
+C:\Users\aditya.sharma\OneDrive - Cyber Group\Desktop\RMS\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.csprojAssemblyReference.cache
+C:\Users\aditya.sharma\OneDrive - Cyber Group\Desktop\RMS\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\aditya.sharma\OneDrive - Cyber Group\Desktop\RMS\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.RazorAssemblyInfo.cache
+C:\Users\aditya.sharma\OneDrive - Cyber Group\Desktop\RMS\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.RazorAssemblyInfo.cs
+C:\Users\aditya.sharma\OneDrive - Cyber Group\Desktop\RMS\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.AssemblyInfoInputs.cache
+C:\Users\aditya.sharma\OneDrive - Cyber Group\Desktop\RMS\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.AssemblyInfo.cs
+C:\Users\aditya.sharma\OneDrive - Cyber Group\Desktop\RMS\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.RazorTargetAssemblyInfo.cache
+C:\Users\aditya.sharma\OneDrive - Cyber Group\Desktop\RMS\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.dll
+C:\Users\aditya.sharma\OneDrive - Cyber Group\Desktop\RMS\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.pdb
