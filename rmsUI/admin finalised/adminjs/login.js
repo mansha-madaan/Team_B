@@ -1,4 +1,4 @@
-var admin = ["1","2","3"];
+var admin ="2";
 console.log("js enabled");
 let baseUrl = "https://localhost:44367/api/login";
 
@@ -72,7 +72,7 @@ function LoginUser() {
           text: "Invalid User Name or Password",
           icon: "error",
         });
-        Promise.reject();
+       
       }
       return res.json();
     })
@@ -86,7 +86,8 @@ function LoginUser() {
         timer: autoRedirectTime,
         icon: "success",
       }).then(() => {
-        if (localStorage.getItem("empId") in admin)
+        
+        if (localStorage.getItem("empId") == admin)
           window.location.replace(internalPageAfterLogin);
         else window.location.replace("employee/Home.html");
       });

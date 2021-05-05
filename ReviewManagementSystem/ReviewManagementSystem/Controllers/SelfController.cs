@@ -52,6 +52,7 @@ namespace ReviewManagementSystem.Controllers
                 XReview.Rstatus = "Save";
                 XReview.ReviewName = reviewInfo.ReviewName;
                 XReview.RName = reviewInfo.RName;
+                XReview.QaName = reviewInfo.QaName;
                 XReview.TargetDate = reviewInfo.TargetDate;
                 XReview.ReviewCycle = reviewInfo.ReviewCycle;
                 XReview.PromotionCycle = reviewInfo.PromotionCycle;
