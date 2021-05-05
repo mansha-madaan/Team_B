@@ -3,8 +3,8 @@ let toRedirectPage = "./Login.html";
 //backkedn put y is empid nullable?
 let beforeAjaxText = "Fetching ...";
 let printStringIfEmpty = "Not Filled";
-let reviewerNames = { Bhanuja: "Bhanuja", Mansha: "Mansha" };
-let qaNames = { Himanshu: "Himanshu", Avneet: "Avneet" };
+let reviewerNames = { Bhanuja: "Bhanuja", Mansha: "Mansha", Sumedha: "Sumedha" };
+let qaNames = { Himanshu: "Himanshu", Avneet: "Avneet", Sakshi: "Sakshi" };
 
 let mytable = document.getElementById("mytable");
 let classButton = ["fa", "fa-edit","fa-1x","btn","btn-secondary", "toremove"];
@@ -103,6 +103,7 @@ let fillDataIntoTable = (data) => {
 };
 //to do add loader before dom content load and make listener after ajax call
 let doWorkAfterDom = () => {
+  myFunction();
   fetch(baseUrl + "/reviewlist/" + params.get("rid"), {
     method: "GET",
     mode: "cors", // no-cors, *cors, same-origin
@@ -446,4 +447,14 @@ function showhide5() {
   } else {
     div.style.display = "block";
   }
+}
+
+
+function myFunction() {
+  myVar = setTimeout(showPage, 500);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
 }
