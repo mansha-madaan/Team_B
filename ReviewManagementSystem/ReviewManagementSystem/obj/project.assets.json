@@ -13347,11 +13347,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aditya.sharma\\source\\repos\\ReviewManagementSystem\\ReviewManagementSystem\\ReviewManagementSystem.csproj",
+      "projectUniqueName": "C:\\Users\\aditya.sharma\\OneDrive - Cyber Group\\Desktop\\RMS\\Team_B\\ReviewManagementSystem\\ReviewManagementSystem\\ReviewManagementSystem.csproj",
       "projectName": "ReviewManagementSystem",
-      "projectPath": "C:\\Users\\aditya.sharma\\source\\repos\\ReviewManagementSystem\\ReviewManagementSystem\\ReviewManagementSystem.csproj",
+      "projectPath": "C:\\Users\\aditya.sharma\\OneDrive - Cyber Group\\Desktop\\RMS\\Team_B\\ReviewManagementSystem\\ReviewManagementSystem\\ReviewManagementSystem.csproj",
       "packagesPath": "C:\\Users\\aditya.sharma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aditya.sharma\\source\\repos\\ReviewManagementSystem\\ReviewManagementSystem\\obj\\",
+      "outputPath": "C:\\Users\\aditya.sharma\\OneDrive - Cyber Group\\Desktop\\RMS\\Team_B\\ReviewManagementSystem\\ReviewManagementSystem\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
