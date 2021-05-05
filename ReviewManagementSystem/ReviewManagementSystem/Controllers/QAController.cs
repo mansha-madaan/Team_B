@@ -33,7 +33,7 @@ namespace ReviewManagementSystem.Controllers
 
             var XProfile = _context.ProfileData.FirstOrDefault(R => R.EmpId == id);
             var name = XProfile.FirstName;
-            var ReviewList = _context.Review.Where(r => r.QaName == name && r.Rstatus == "Reviewer Level");
+            var ReviewList = _context.Review.Where(r => r.QaName == name);
 
             return Ok(ReviewList);
         }
