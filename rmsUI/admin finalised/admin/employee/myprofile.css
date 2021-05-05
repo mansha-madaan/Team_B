@@ -321,9 +321,9 @@ a.article:hover {
     width: 120px;
     height: 120px;
     margin: -76px 0 0 -76px;
-    border: 16px solid #1F2739;
+    border: 3px solid #1F2739;
     border-radius: 50%;
-    border-top: 16px solid #ffeba7;
+    border-top: 3px solid #ffeba7;
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
   }

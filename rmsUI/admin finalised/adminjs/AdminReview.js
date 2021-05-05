@@ -1,4 +1,5 @@
 function allEmp() {
+  myFunction();
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   var requestOptions = {
@@ -161,7 +162,14 @@ function allReview() {
       console.log("Looks like there was a problem: \n", error);
     });
 }
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
 
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
 {/* <td data-heading="Form Name">${reviewInfo.reviewName}</td>
               
              <td data-heading="Cycle">${reviewInfo.reviewCycle}</td>

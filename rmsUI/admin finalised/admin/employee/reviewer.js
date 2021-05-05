@@ -22,6 +22,7 @@ var id1 = localStorage.getItem("empId");
 ////////////////////////////////////////////////////////////////////////////////////////
 
 function empSelfReview() {
+  myFunction();
   var url = baseUrl + "/self/" + id1.toString();
   fetch(url, {
     mode: "cors",
@@ -261,3 +262,13 @@ function extra(id, st) {
       });
   }
 }
+//////////////
+function myFunction() {
+  myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+
