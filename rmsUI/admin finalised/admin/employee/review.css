@@ -12,7 +12,7 @@ body {
 }
 .fixTableHead {
    
-    overflow-y: scroll;
+    overflow-y: auto;
     height: 390px;
     margin: 50px auto 0;
 
