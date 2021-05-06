@@ -28,36 +28,36 @@ function allEmp() {
 
   fetch("https://localhost:44367/api/login", requestOptions)
     .then((res) => res.json())
-    // .then((data) => {
-
-    //   data.forEach((empRequest) => {
-    //     // console.log(user);
-    //       sendEmail(empRequest.empEmailId);
-    //   });
-
-    //   // do something with data
-    //   console.log(data);
-    // })
     .then((data) => {
-      Swal.fire({
-        title: "Confirm to initiate a review?",
-        showDenyButton: true,
-        //showCancelButton: true,
-        confirmButtonText: `  Confirm`,
-        denyButtonText: `Cancel`,
-      }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
-        if (result.isConfirmed) {
-          data.forEach((empRequest) => {
-            // console.log(user);
-            sendEmail(empRequest.empEmailId);
-          });
-          Swal.fire("Review Initiated", "", "success");
-        } else if (result.isDenied) {
-          Swal.fire("Review not Initiated", "", "info");
-        }
+
+      data.forEach((empRequest) => {
+        // console.log(user);
+          sendEmail(empRequest.empEmailId);
       });
+
+      // do something with data
+      console.log(data);
     })
+    // .then((data) => {
+    //   Swal.fire({
+    //     title: "Confirm to initiate a review?",
+    //     showDenyButton: true,
+    //     //showCancelButton: true,
+    //     confirmButtonText: `  Confirm`,
+    //     denyButtonText: `Cancel`,
+    //   }).then((result) => {
+    //     /* Read more about isConfirmed, isDenied below */
+    //     if (result.isConfirmed) {
+    //       data.forEach((empRequest) => {
+    //         // console.log(user);
+    //         sendEmail(empRequest.empEmailId);
+    //       });
+    //       Swal.fire("Review Initiated", "", "success");
+    //     } else if (result.isDenied) {
+    //       Swal.fire("Review not Initiated", "", "info");
+    //     }
+    //   });
+    // })
     .catch((error) => console.log("error", error));
 }
 
@@ -84,7 +84,6 @@ function initiateReview() {
   allEmp();
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
-
   var raw = JSON.stringify({
     ReviewName: "Not Filled",
     TargetDate: "2018-12-28",
@@ -93,22 +92,68 @@ function initiateReview() {
     RName: "Not Filled",
     QaName: "Not Filled",
   });
-
   var requestOptions = {
     method: "POST",
     headers: myHeaders,
     body: raw,
     redirect: "follow",
   };
-
   fetch("https://localhost:44367/api/admin", requestOptions)
     .then((response) => response.text())
-    .then((result) => {
-      allReview();
-      console.log(result);
+    .then((data) => {
+      Swal.fire({
+        title: "Confirm to initiate a review?",
+        showDenyButton: true,
+        //showCancelButton: true,
+        confirmButtonText: `  Confirm`,
+        denyButtonText: `Cancel`,
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          //data.forEach((empRequest) => {
+          // console.log(user);
+          //sendEmail(empRequest.empEmailId);
+          allReview();
+
+          // });
+          Swal.fire("Review Initiated", "", "success");
+        } else if (result.isDenied) {
+          Swal.fire("Review not Initiated", "", "info");
+        }
+      });
     })
     .catch((error) => console.log("error", error));
 }
+
+// function initiateReview() {
+//   allEmp();
+//   var myHeaders = new Headers();
+//   myHeaders.append("Content-Type", "application/json");
+
+//   var raw = JSON.stringify({
+//     ReviewName: "Not Filled",
+//     TargetDate: "2018-12-28",
+//     ReviewCycle: "Not Filled",
+//     PromotionCycle: "Not Filled",
+//     RName: "Not Filled",
+//     QaName: "Not Filled",
+//   });
+
+//   var requestOptions = {
+//     method: "POST",
+//     headers: myHeaders,
+//     body: raw,
+//     redirect: "follow",
+//   };
+
+//   fetch("https://localhost:44367/api/admin", requestOptions)
+//     .then((response) => response.text())
+//     .then((result) => {
+//       allReview();
+//       console.log(result);
+//     })
+//     .catch((error) => console.log("error", error));
+// }
 
 function allReview() {
   myFunction();
