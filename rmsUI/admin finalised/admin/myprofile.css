@@ -1,27 +1,26 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
         * {
           box-sizing: border-box;
         }
         body{
-            background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
-            background-color: #2a2b38;
-           
-            font-size: 1.5em;
+                      font-size: 1em;
+                      
         }
         h2{
             text-align: center;
-            color: #ffeba7;
+            color: black;
+           font-family: unicons;
         }
         
         input[type=text], select, textarea {
           width: 100%;
           padding: 12px;
-          color: #ffeba7;
+          color: black;
           font-size: 1em;
           text-align: center;
-          background-color: #2a2b38;
-          border-bottom: 1px solid #ffeba7;
+          background-image: linear-gradient(to left,#f15e2a,white );
+          border-bottom: 1px solid black;
           margin-bottom: 1%;
-        
           border-radius: 4px;
           resize: vertical;
         }
@@ -29,30 +28,19 @@
         label {
           padding: 12px 12px 12px 0;
           display: inline-block;
-          color: #ffeba7;
+          color: black;
+          font-weight: lighter;
         }
         textarea{
-            color: #ffeba7;
-            border: 1px solid #ffeba7;
+            color: black;
+            border: 1px solid black;
         }
-        
-        /*input[type=submit] {
-          background-color: #04AA6D;}
-          color: #ffeba7;
-          padding: 12px 20px;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-          float: right;
-        }
-        
-        input[type=submit]:hover {
-          background-color: #45a049;
-        }*/
+      
         
         .container {
           border-radius: 5px;
-          background-color: #1F2739;
+        /*  background-image:linear-gradient(to left,#f15e2a,white );*/
+        background-color: rgb(128, 128, 128,0.2);
           padding: 20px;
           margin-left:10% ;
           max-width: 80%;
@@ -90,37 +78,22 @@
             margin-top: 0;
           }
         }
-        @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
-body {
-    font-family: 'Poppins', sans-serif;
-    
-    
-        background-color: #2a2b38;
-        background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
-         
-          
-      
-}
 .collapse a{
-    background-color: #2a2b38;
+  background-image: linear-gradient(to left,#f15e2a,white );
 }
-#dismiss{
-   
-    background-color: #ffeba7;
-    color: #ffeba7;
+a{
+  color: black;
 }
+
+
 .btn {
    
-        color:black;
-        background-color: #ffeba7;
+        background-color:black;
+        color:linear-gradient(to left,#f15e2a,white );
         
     }
 
-.btn :hover {
-    background-color: #102770;
-    
-}
 
 a,
 a:hover,
@@ -143,8 +116,8 @@ a:focus {
 
 .navbar-btn {
     box-shadow: none;
-   background-color: #ffeba7;
-   color: #ffeba7;
+   background-color: black;
+   color: black;
 }
 
 .line {
@@ -165,7 +138,7 @@ a:focus {
     left: -334px;
     height: 100vh;
     z-index: 999;
-    background: #2a2b38;
+    background-image:linear-gradient(to left,#f15e2a,white );
     transition: all 0.3s;
     overflow-y: scroll;
     box-shadow: 3px 3px 3px rgb(0 0 0 / 20%);
@@ -174,6 +147,7 @@ a:focus {
 #sidebar.active {
     left: 0;
 }
+
 #dismiss{
     background-color: black;
 }
@@ -183,7 +157,7 @@ a:focus {
     height: 35px;
     line-height: 35px;
     text-align: center;
-    background:#102770;
+    background-image:linear-gradient(to left,#f15e2a,white );
     position: absolute;
     top: 20px;
     right: 24px;
@@ -193,10 +167,10 @@ a:focus {
     transition: all 0.3s;
 }
 
-#dismiss:hover {
-    background:#102770;
-    color: #7386D5;
-}
+/*#dismiss:hover {
+   background-color: black;
+   color: linear-gradient(to left,#f15e2a,white );
+}*/
 
 .overlay {
     display: none;
@@ -212,7 +186,7 @@ a:focus {
 
 #sidebar .sidebar-header {
     padding: 20px;
-   background-color: #ffeba7;
+   background-color: black;
 }
 
 #sidebar ul.components {
@@ -220,7 +194,7 @@ a:focus {
 }
 
 #sidebar ul p {
-    color: #fff;
+    color: black;
     padding: 10px;
 }
 
@@ -228,18 +202,19 @@ a:focus {
     padding: 15px;
     font-size: 0.8em;
     display: block;
+    color: black;
 }
 
 #sidebar ul li a:hover {
-    color: #7386D5;
-    background: #fff;
+  color :linear-gradient(to left,#f15e2a,white );
+ background-color:  white;
 }
 
-#sidebar ul li.active>a,
+/*#sidebar ul li.active>a,
 a[aria-expanded="true"] {
     color:black;
-    background: #ffeba7;
-}
+    background: black;
+}*/
 .list-unstyled {
     font-size: 1.5rem;
     font-family: 'Poppins',sans-serif;
@@ -258,9 +233,9 @@ a[data-toggle="collapse"] {
 }
 
 ul ul a {
-    font-size: 0.9em !important;
-    padding-left: 30px !important;
-    background: #6d7fcc;
+    font-size: 0.9em ;
+    padding-left: 30px ;
+    /*background: #6d7fcc;*/
 }
 
 ul.CTAs {
@@ -269,20 +244,20 @@ ul.CTAs {
 
 ul.CTAs a {
     text-align: center;
-    font-size: 0.9em !important;
+    font-size: 0.9em ;
     display: block;
     border-radius: 5px;
     margin-bottom: 5px;
 }
-a.download {
-    background: #fff;
-    color: #7386D5;
-}
+/*a.download {
+    background: peachpuff;
+    color: black;
+}*/
 
-a.article,
+/*a.article,
 a.article:hover {
-    background: #6d7fcc !important;
-    color: #fff !important;
+    background: black ;
+    color: #fff ;
 }
 
 /* ---------------------------------------------------
@@ -291,12 +266,12 @@ a.article:hover {
 
 #content {
    
-    background-color: #2a2b38;
-    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg');
+ /* background-image:linear-gradient(to left,#f15e2a,white );*/
     width: 100%;
     padding: 20px;
     min-height: 100vh;
     transition: all 0.3s;
+    background-color: white;
     position: absolute;
     top: 0;
     right: 0;
@@ -308,8 +283,8 @@ a.article:hover {
 
   @media (max-width:367px){
     .form:hover > .search-text {
-        width: 155px !important;
-        padding: 0 6px !important;
+        width: 155px ;
+        padding: 0 6px ;
     }
     
 }
@@ -324,7 +299,7 @@ a.article:hover {
     margin: -76px 0 0 -76px;
     border: 3px solid #1F2739;
     border-radius: 50%;
-    border-top: 3px solid #ffeba7;
+    border-top: 3px solid black;
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
   }
