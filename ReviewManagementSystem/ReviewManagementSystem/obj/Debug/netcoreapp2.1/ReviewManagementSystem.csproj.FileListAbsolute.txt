@@ -26,3 +26,17 @@ C:\Users\aditya.sharma\OneDrive - Cyber Group\Desktop\RMS\Team_B\ReviewManagemen
 C:\Users\aditya.sharma\OneDrive - Cyber Group\Desktop\RMS\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.RazorTargetAssemblyInfo.cache
 C:\Users\aditya.sharma\OneDrive - Cyber Group\Desktop\RMS\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.dll
 C:\Users\aditya.sharma\OneDrive - Cyber Group\Desktop\RMS\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.pdb
+C:\Users\mansha.madaan\Desktop\FIR SE CLONE\Team_B\ReviewManagementSystem\ReviewManagementSystem\bin\Debug\netcoreapp2.1\ReviewManagementSystem.deps.json
+C:\Users\mansha.madaan\Desktop\FIR SE CLONE\Team_B\ReviewManagementSystem\ReviewManagementSystem\bin\Debug\netcoreapp2.1\ReviewManagementSystem.runtimeconfig.json
+C:\Users\mansha.madaan\Desktop\FIR SE CLONE\Team_B\ReviewManagementSystem\ReviewManagementSystem\bin\Debug\netcoreapp2.1\ReviewManagementSystem.runtimeconfig.dev.json
+C:\Users\mansha.madaan\Desktop\FIR SE CLONE\Team_B\ReviewManagementSystem\ReviewManagementSystem\bin\Debug\netcoreapp2.1\ReviewManagementSystem.dll
+C:\Users\mansha.madaan\Desktop\FIR SE CLONE\Team_B\ReviewManagementSystem\ReviewManagementSystem\bin\Debug\netcoreapp2.1\ReviewManagementSystem.pdb
+C:\Users\mansha.madaan\Desktop\FIR SE CLONE\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.csprojAssemblyReference.cache
+C:\Users\mansha.madaan\Desktop\FIR SE CLONE\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\mansha.madaan\Desktop\FIR SE CLONE\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.RazorAssemblyInfo.cache
+C:\Users\mansha.madaan\Desktop\FIR SE CLONE\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.RazorAssemblyInfo.cs
+C:\Users\mansha.madaan\Desktop\FIR SE CLONE\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.AssemblyInfoInputs.cache
+C:\Users\mansha.madaan\Desktop\FIR SE CLONE\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.AssemblyInfo.cs
+C:\Users\mansha.madaan\Desktop\FIR SE CLONE\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.RazorTargetAssemblyInfo.cache
+C:\Users\mansha.madaan\Desktop\FIR SE CLONE\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.dll
+C:\Users\mansha.madaan\Desktop\FIR SE CLONE\Team_B\ReviewManagementSystem\ReviewManagementSystem\obj\Debug\netcoreapp2.1\ReviewManagementSystem.pdb

@@ -32,6 +32,7 @@ let selfGrowthStatus = document.getElementById("mySelect7");
 let selfFeedback3000 = document.getElementById("ta-9");
 let selfFeedbackStatus = document.getElementById("mySelect9");
 
+EmpName.textContent = "Fetching...";
 reviewName.textContent = "Fetching... ";
 targetDate.textContent = "Fetching... ";
 rstatus.textContent = "Fetching... ";
@@ -71,6 +72,7 @@ let fillDataIntoTable = (data) => {
     selfFeedback3000.value = data.selfFeed;
     selfFeedbackStatus.value = data.selfFeedStatus;
   }
+ // reviewName.textContent = getfromProfile(data.EmpId);
   reviewName.textContent = !data.reviewName.trim()
     ? printStringIfEmpty
     : data.reviewName.trim();
@@ -94,6 +96,7 @@ let fillDataIntoTable = (data) => {
 };
 //to do add loader before dom content load and make listener after ajax call
 let doWorkAfterDom = () => {
+ // function getall(){
   fetch(baseUrl + "/reviewlist/" + params.get("rid"), {
     method: "GET",
     mode: "cors", // no-cors, *cors, same-origin
@@ -154,6 +157,7 @@ let doWorkAfterDom = () => {
       }
     });
 };
+
 //maintain this oder of both
 document.addEventListener("DOMContentLoaded", doWorkAfterDom);
 let addEditButtons = () => {
@@ -441,3 +445,36 @@ function showhide5() {
     div.style.display = "block";
   }
 }
+
+// function getfromProfile(empid) {
+//   myFunction();
+//   //var saveid = localStorage.getItem("empId");
+
+//   // const url = 'https://localhost:44339/api/user/'+id;
+//   // console.log(url)
+//   fetch("https://localhost:44367/api/profile/" + empid, {
+//     mode: "cors", // no-cors, *cors, same-origin
+//     cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+//     credentials: "same-origin", // include, *same-origin, omit
+//     headers: {
+//       "Content-Type": "application/json",
+//       // 'Content-Type': 'application/x-www-form-urlencoded',
+//     },
+//     redirect: "follow", // manual, *follow, error
+//     referrerPolicy: "no-referrer",
+//   })
+//     .then((res) => res.json())
+//     .then((data) => {
+//       // let li = '';
+//       // data=JSON.parse(data)
+//       console.log(data);
+
+//       // console.log(user);
+//       document.getElementById("fname").value = data[0].firstName;
+//     })
+//     .catch(function (error) {
+//       console.log("Looks like there was a problem: \n", error);
+//     });
+  
+//   empSelfReview();
+// }

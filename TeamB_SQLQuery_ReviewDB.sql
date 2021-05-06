@@ -38,3 +38,11 @@ RQ_Growth_Status varchar(255),
 FOREIGN KEY (EmpID) REFERENCES EmpLogin(EmpID));
 
 select * from review;
+
+DELETE FROM review;
+
+insert into review(EmpID,reviewName,R_Name,QA_Name,Target_Date,RStatus)
+VALUES(1,'review2021','Avneet','Himanshu','2021-05-21','Initiate')
+
+insert into review(EmpID,reviewName,R_Name,QA_Name,Target_Date,RStatus,Review_Cycle,Promotion_Cycle)
+VALUES(3,'review2021','Avneet','Himanshu','2021-08-07','Initiate','2020-2021','2020')

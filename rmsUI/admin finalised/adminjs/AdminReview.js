@@ -31,39 +31,39 @@ function allEmp() {
 
   fetch("https://localhost:44367/api/login", requestOptions)
     .then((res) => res.json())
-    // .then((data) => {
+    .then((data) => {
       
-    //   data.forEach((empRequest) => {
-    //     // console.log(user);
-    //       sendEmail(empRequest.empEmailId);
-    //   });
+      data.forEach((empRequest) => {
+        // console.log(user);
+          sendEmail(empRequest.empEmailId);
+      });
       
 
-    //   // do something with data
-    //   console.log(data);
-    // })
-    .then(( (data) => {
-      Swal.fire({
-        title: 'Confirm to initiate a review?',
-        showDenyButton: true,
-        //showCancelButton: true,
-        confirmButtonText: `  Confirm`,
-        denyButtonText: `Cancel`,
-       }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
-        if (result.isConfirmed) {
-          data.forEach((empRequest) => {
-            // console.log(user);
-              sendEmail(empRequest.empEmailId);
+      // do something with data
+      console.log(data);
+    })
+    // .then(( (data) => {
+    //   Swal.fire({
+    //     title: 'Confirm to initiate a review?',
+    //     showDenyButton: true,
+    //     //showCancelButton: true,
+    //     confirmButtonText: `  Confirm`,
+    //     denyButtonText: `Cancel`,
+    //    }).then((result) => {
+    //     /* Read more about isConfirmed, isDenied below */
+    //     if (result.isConfirmed) {
+    //       data.forEach((empRequest) => {
+    //         // console.log(user);
+    //           sendEmail(empRequest.empEmailId);
            
             
-          });    
-        Swal.fire('Review Initiated', '', 'success')
-        } else if (result.isDenied) {
-        Swal.fire('Review not Initiated', '', 'info')
-        }
-       })
-      }))
+    //       });    
+    //     Swal.fire('Review Initiated', '', 'success')
+    //     } else if (result.isDenied) {
+    //     Swal.fire('Review not Initiated', '', 'info')
+    //     }
+    //    })
+    //   }))
     .catch((error) => console.log("error", error));
 }
 
@@ -111,10 +111,28 @@ function initiateReview() {
 
   fetch("https://localhost:44367/api/admin", requestOptions)
     .then((response) => response.text())
-    .then((result) => {
-      allReview()
-      console.log(result)
-    })
+    .then(( (data) => {
+      Swal.fire({
+        title: 'Confirm to initiate a review?',
+        showDenyButton: true,
+        //showCancelButton: true,
+        confirmButtonText: `  Confirm`,
+        denyButtonText: `Cancel`,
+       }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          //data.forEach((empRequest) => {
+            // console.log(user);
+              //sendEmail(empRequest.empEmailId);
+              allReview();
+            
+         // });    
+        Swal.fire('Review Initiated', '', 'success')
+        } else if (result.isDenied) {
+        Swal.fire('Review not Initiated', '', 'info')
+        }
+       })
+      }))
     .catch((error) => console.log("error", error));
   
 }
@@ -144,7 +162,10 @@ function allReview() {
   })
     .then((res) => res.json())
 
+
     .then((data) => {
+     
+
       let li = "";
 
       let Totaldate = "";
@@ -156,7 +177,7 @@ function allReview() {
       let date = "";
 
       data.forEach((reviewInfo) => {
-        console.log(reviewInfo);
+       // console.log(reviewInfo);
 
         if (reviewInfo.targetDate != null) {
           year = reviewInfo.targetDate.slice(0, 4);
@@ -169,12 +190,13 @@ function allReview() {
         } else {
           Totaldate = "-----";
         }
+        
 
         li += `<tr>
 
              <td data-heading="Form Name">${reviewInfo.reviewName}</td>
 
-              
+            
               
              <td data-heading="Cycle">${reviewInfo.reviewCycle}</td>
 
@@ -188,11 +210,15 @@ function allReview() {
 
            </tr>`;
       });
+     
 
       document.getElementById("allTableContent").innerHTML = li;
+      
+    
 
       console.log(data);
     })
+     
 
     .catch(function (error) {
       console.log("Looks like there was a problem: \n", error);
@@ -234,4 +260,37 @@ function mySearch() {
       }
     }      
   }
+}
+
+function getfromProfile(empid) {
+  myFunction();
+  //var saveid = localStorage.getItem("empId");
+
+  // const url = 'https://localhost:44339/api/user/'+id;
+  // console.log(url)
+  fetch("https://localhost:44367/api/profile/" + empid, {
+    mode: "cors", // no-cors, *cors, same-origin
+    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: "same-origin", // include, *same-origin, omit
+    headers: {
+      "Content-Type": "application/json",
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    redirect: "follow", // manual, *follow, error
+    referrerPolicy: "no-referrer",
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      // let li = '';
+      // data=JSON.parse(data)
+
+      // console.log(user);
+      document.getElementsByClassName("empname").innerHTML =  `${data[0].firstName}`;
+              
+    
+    })
+    .catch(function (error) {
+      console.log("Looks like there was a problem: \n", error);
+    });
+  
 }
