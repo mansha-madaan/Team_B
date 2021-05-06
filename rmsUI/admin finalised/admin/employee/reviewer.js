@@ -30,6 +30,7 @@ function empSelfReview() {
     credentials: "same-origin",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
     redirect: "follow",
     referrerPolicy: "no-referrer",
@@ -80,6 +81,7 @@ function empReviewerReview() {
     credentials: "same-origin",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
     redirect: "follow",
     referrerPolicy: "no-referrer",
@@ -128,6 +130,7 @@ function empQaReview() {
     credentials: "same-origin",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
     redirect: "follow",
     referrerPolicy: "no-referrer",
@@ -176,6 +179,7 @@ function empCloseReview() {
     credentials: "same-origin",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
     redirect: "follow",
     referrerPolicy: "no-referrer",
@@ -230,6 +234,7 @@ function extra(id, st) {
       credentials: "same-origin",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
       redirect: "follow",
       referrerPolicy: "no-referrer",

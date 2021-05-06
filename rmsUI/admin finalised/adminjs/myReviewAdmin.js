@@ -8,7 +8,7 @@ let qaNames = { Himanshu: "Himanshu", Avneet: "Avneet", Sakshi: "Sakshi" };
 
 let mytable = document.getElementById("mytable");
 let classButton = ["fa", "fa-edit","fa-1x","btn","btn-secondary", "toremove"];
-let saveButtonClass = ["fa", "fa-save", "fa-2x","btn","btn-secondary","toremove"];
+let saveButtonClass = ["fa", "fa-save", "fa-2x","btn", "m-2","p-2","btn-secondary","toremove"];
 let disabledRditButton = "d-none";
 let toShow = false;
 let tableDiv = document.getElementsByClassName("back-container");
