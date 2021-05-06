@@ -7,7 +7,8 @@ let reviewerNames = { Bhanuja: "Bhanuja", Mansha: "Mansha" };
 let qaNames = { Himanshu: "Himanshu", Avneet: "Avneet" };
 
 let mytable = document.getElementById("mytable");
-let classButton = ["fa", "fa-edit","fa-2x","btn","btn-secondary","toremove"];
+let classButton = ["fa", "fa-edit", "fa-2x", "btn", "btn-secondary", "toremove"];
+let sbsButtonClass = ["fa", "fa-save","fa-2x","btn","btn-secondary", "toremove"]; // sbs = save before sumbit
 let saveButtonClass = ["fa", "fa-save","fa-2x","btn","btn-secondary", "toremove"];
 let disabledRditButton = "d-none";
 let toShow = false;
