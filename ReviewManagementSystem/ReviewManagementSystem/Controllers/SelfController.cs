@@ -10,7 +10,7 @@ using ReviewManagementSystem.DbModels;
 
 namespace ReviewManagementSystem.Controllers
 {
-   
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class SelfController : ControllerBase
@@ -49,7 +49,11 @@ namespace ReviewManagementSystem.Controllers
             Review XReview = _context.Review.FirstOrDefault(R => R.Rid == id);
             if (XReview.Rstatus == "Initiate")
             {
-                XReview.Rstatus = "Save";
+                if(reviewInfo.ifSubmit == true)
+                {
+                    XReview.Rstatus = "Save";
+                    
+                }
                 XReview.ReviewName = reviewInfo.ReviewName;
                 XReview.RName = reviewInfo.RName;
                 XReview.QaName = reviewInfo.QaName;

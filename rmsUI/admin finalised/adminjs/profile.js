@@ -11,6 +11,7 @@ function getById() {
     headers: {
       "Content-Type": "application/json",
       // 'Content-Type': 'application/x-www-form-urlencoded',
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
     redirect: "follow", // manual, *follow, error
     referrerPolicy: "no-referrer",
@@ -28,7 +29,7 @@ function getById() {
       document.getElementById("lc").value = data[0].plocation;
       document.getElementById("designation").value = data[0].prole;
       document.getElementById("Total").value = data[0].totalExp;
-     // document.getElementById("doj").value = data[0].dateJoin;
+      // document.getElementById("doj").value = data[0].dateJoin;
       document.getElementById("subject").innerHTML = data[0].skills;
 
       // do something with data
@@ -38,7 +39,7 @@ function getById() {
       console.log("Looks like there was a problem: \n", error);
     });
   
-  empSelfReview();
+  
 }
 
 function myFunction() {

@@ -1,5 +1,5 @@
 let baseUrl = "https://localhost:44367/api";
-let toRedirectPage = "./Login.html";
+let toRedirectPage = "/admin/Login.html";
 //backkedn put y is empid nullable?
 let beforeAjaxText = "Fetching ...";
 let printStringIfEmpty = "Not Filled";
@@ -8,8 +8,8 @@ let qaNames = { Himanshu: "Himanshu", Avneet: "Avneet" };
 
 let mytable = document.getElementById("mytable");
 let classButton = ["fa", "fa-edit", "fa-2x", "btn", "btn-secondary", "toremove"];
-let sbsButtonClass = ["fa", "fa-save","fa-2x","btn","btn-secondary", "toremove"]; // sbs = save before sumbit
-let saveButtonClass = ["fa", "fa-save","fa-2x","btn","btn-secondary", "toremove"];
+let saveButtonClass = ["fa", "fa-save","btn","m-2","p-2","btn-secondary", "toremove"]; // sbs = save before sumbit
+let submitButtonClass = ["fa", "fa-cloud-upload","btn","m-2","p-2","btn-secondary", "toremove"];
 let disabledRditButton = "d-none";
 let toShow = false;
 let tableDiv = document.getElementsByClassName("back-container");
@@ -60,9 +60,35 @@ let fillDataIntoTable = (data) => {
     year = data.targetDate.slice(0, 4);
     month = data.targetDate.slice(5, 7);
     date = data.targetDate.slice(8, 10);
-    Totaldate = month + "-" + date + "-" + year;
+    // Totaldate = month + "-" + date + "-" + year;
+    Totaldate = year + "-" + date + "-" + month;
   }
-  if (data.rstatus === "Save") {
+  //if (data.rstatus === "Save") {
+  if (
+    // !reviewName.textContent ||
+    // !targetDate.textContent ||
+    // !reviewCycle.textContent ||
+    // !promotionCycle.textContent ||
+    // !rName.textContent ||
+    // !qaName.textContent ||
+    !data.selfEffect ||
+    !data.selfEffectStatus||
+    !data.selfLead||
+    !data.selfLeadStatus||
+    !data.selfGrowth||
+    !data.selfGrowthStatus||
+    !data.selfFeed||
+    !data.selfFeedStatus||
+
+    data.selfEffect.trim() !== "" ||
+    data.selfEffectStatus.trim() !== ""||
+    data.selfLead.trim() !== ""||
+    data.selfLeadStatus.trim() !== ""||
+    data.selfGrowth.trim() !== ""||
+    data.selfGrowthStatus.trim() !== ""||
+    data.selfFeed.trim() !== ""||
+    data.selfFeedStatus.trim() !== ""
+  )
     selfEffect3000.value = data.selfEffect;
     selfEffectStatus.value = data.selfEffectStatus;
     selfLeader3000.value = data.selfLead;
@@ -71,7 +97,7 @@ let fillDataIntoTable = (data) => {
     selfGrowthStatus.value = data.selfGrowthStatus;
     selfFeedback3000.value = data.selfFeed;
     selfFeedbackStatus.value = data.selfFeedStatus;
-  }
+  //}
   reviewName.textContent = !data.reviewName.trim()
     ? printStringIfEmpty
     : data.reviewName.trim();
@@ -136,6 +162,24 @@ let doWorkAfterDom = () => {
           });
         });
         tableDiv[0].insertBefore(saveButton, mytable);
+
+        //////sumbit
+        let submitButton = document.createElement("a");
+        submitButton.classList.add(...submitButtonClass);
+        submitButton.addEventListener("click", (event) => {
+          Promise.resolve(checkAndSubmit()).then((returned) => {
+            if (!returned) {
+              Swal.fire({
+                title: "Incomplete Form",
+                text: "Please Fill All The Fields!",
+                icon: "warning",
+                confirmButtonText: "ok",
+              });
+            }
+          });
+        });
+        tableDiv[0].insertBefore(submitButton, mytable);
+
         // addEditButtons();
       }
     })
@@ -267,7 +311,143 @@ let addEditButtons = () => {
     mytable.rows[i].insertCell(2).appendChild(edit);
   }
 };
+
+
+///////////////////////////////////////////////// check and submit
 //api breaking, returning ok always
+let checkAndSubmit = () => {
+  console.log(
+    !reviewName.textContent,
+    !targetDate.textContent,
+    !reviewCycle.textContent,
+    !promotionCycle.textContent,
+    !rName.textContent,
+    !qaName.textContent,
+    !selfEffect3000.value,
+    !selfEffectStatus.value,
+    !selfGrowth3000.value,
+    !selfGrowthStatus.value,
+    !selfFeedback3000.value,
+    !selfFeedbackStatus.value,
+    !selfLeader3000.value,
+    !selfLeaderStatus.value
+  );
+  if (
+    // !reviewName.textContent ||
+    // !targetDate.textContent ||
+    // !reviewCycle.textContent ||
+    // !promotionCycle.textContent ||
+    // !rName.textContent ||
+    // !qaName.textContent ||
+    !selfEffect3000.value ||
+    selfEffectStatus.value === "" ||
+    !selfGrowth3000.value ||
+    selfGrowthStatus.value === "" ||
+    !selfFeedback3000.value ||
+    selfFeedbackStatus.value === "" ||
+    !selfLeader3000.value ||
+    selfLeaderStatus.value === ""
+  )
+    return false;
+
+  targetDate.textContent = targetDate.textContent
+    .split("-")
+    .reverse()
+    .join("-");
+  let record = {
+    ifSubmit: true,
+    ReviewName: reviewName.textContent,
+    TargetDate: targetDate.textContent,
+    ReviewCycle: reviewCycle.textContent,
+    PromotionCycle: promotionCycle.textContent,
+    RName: rName.textContent,
+    QaName: qaName.textContent,
+    SelfEffect: selfEffect3000.value,
+    SelfEffectStatus: selfEffectStatus.value,
+    SelfLead: selfLeader3000.value,
+    SelfLeadStatus: selfLeaderStatus.value,
+    SelfGrowth: selfGrowth3000.value,
+    SelfGrowthStatus: selfGrowthStatus.value,
+    SelfFeed: selfFeedback3000.value,
+    SelfFeedStatus: selfFeedbackStatus.value,
+  };
+  console.log(JSON.stringify(record));
+  fetch(baseUrl + "/self/" + params.get("rid"), {
+    method: "PUT",
+    mode: "cors", // no-cors, *cors, same-origin
+    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: "same-origin", // include, *same-origin, omit
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`, //no prob if null handeled later
+
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: JSON.stringify(record),
+    redirect: "follow", // manual, *follow, error
+    referrerPolicy: "no-referrer",
+  })
+    // .then((res) => {
+    // console.log(res);
+    // if (!res.ok) {
+    //   throw new Error(res.status);
+    // }
+    // // if (res.status !== 200) {
+    //   Swal.fire({
+    //     title: "Error!",
+    //     text: "Somethinng Went Wrong While Saving!",
+    //     icon: "error",
+    //     confirmButtonText: "ok",
+    //   });
+    //   Promise.reject();
+    // }
+    // else
+    //  return res.json();
+    // })
+    .then((data) => {
+      console.log(data);
+      if (!data.ok) {
+        throw new Error(data.status);
+      }
+      if (data.message === "Cannot Updated") {
+        throw new Error(data.message);
+      }
+      Swal.fire({
+        title: "Submitted",
+        text: "",
+        icon: "success",
+        confirmButtonText: "ok",
+      });
+      doWorkAfterDom();
+    })
+    .catch((err) => {
+      console.log(err);
+      if (err.message === "401") {
+        Swal.fire({
+          title: "Please LogIn Again",
+          text: " ",
+          icon: "error",
+          confirmButtonText: "ok",
+        }).then(() => {
+          window.location.replace(toRedirectPage);
+        });
+
+        return false;
+      }
+      // if(localStorage.getItem("token"))
+
+      Swal.fire({
+        title: "Could not Save!",
+        text: "Somethinng Went Wrong!",
+        icon: "error",
+        confirmButtonText: "ok",
+      });
+    });
+  return true;
+};
+
+///////////////////////////////////////////////// check and save
+
 let checkAndSave = () => {
   console.log(
     !reviewName.textContent,
@@ -308,7 +488,7 @@ let checkAndSave = () => {
     .reverse()
     .join("-");
   let record = {
-
+    ifSubmit: false,
     ReviewName: reviewName.textContent,
     TargetDate: targetDate.textContent,
     ReviewCycle: reviewCycle.textContent,
@@ -398,6 +578,9 @@ let checkAndSave = () => {
     });
   return true;
 };
+
+
+
 
 ////////////////////////////////////////////////////
 function showhide1() {
