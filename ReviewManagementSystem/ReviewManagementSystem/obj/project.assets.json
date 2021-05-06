@@ -13341,23 +13341,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\himanshu\\.nuget\\packages\\": {},
+    "C:\\Users\\aditya.sharma\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\training\\Proj1\\last_working\\Team_B\\ReviewManagementSystem\\ReviewManagementSystem\\ReviewManagementSystem.csproj",
+      "projectUniqueName": "C:\\Users\\aditya.sharma\\OneDrive - Cyber Group\\Desktop\\RMS\\Team_B\\ReviewManagementSystem\\ReviewManagementSystem\\ReviewManagementSystem.csproj",
       "projectName": "ReviewManagementSystem",
-      "projectPath": "E:\\training\\Proj1\\last_working\\Team_B\\ReviewManagementSystem\\ReviewManagementSystem\\ReviewManagementSystem.csproj",
-      "packagesPath": "C:\\Users\\himanshu\\.nuget\\packages\\",
-      "outputPath": "E:\\training\\Proj1\\last_working\\Team_B\\ReviewManagementSystem\\ReviewManagementSystem\\obj\\",
+      "projectPath": "C:\\Users\\aditya.sharma\\OneDrive - Cyber Group\\Desktop\\RMS\\Team_B\\ReviewManagementSystem\\ReviewManagementSystem\\ReviewManagementSystem.csproj",
+      "packagesPath": "C:\\Users\\aditya.sharma\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\aditya.sharma\\OneDrive - Cyber Group\\Desktop\\RMS\\Team_B\\ReviewManagementSystem\\ReviewManagementSystem\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\himanshu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\aditya.sharma\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
