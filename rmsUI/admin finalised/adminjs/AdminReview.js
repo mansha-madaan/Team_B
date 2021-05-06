@@ -55,6 +55,8 @@ function allEmp() {
           data.forEach((empRequest) => {
             // console.log(user);
               sendEmail(empRequest.empEmailId);
+           
+            
           });    
         Swal.fire('Review Initiated', '', 'success')
         } else if (result.isDenied) {
@@ -172,7 +174,7 @@ function allReview() {
 
              <td data-heading="Form Name">${reviewInfo.reviewName}</td>
 
-              <td data-heading="Emp Id">${reviewInfo.empId}</td>
+              
               
              <td data-heading="Cycle">${reviewInfo.reviewCycle}</td>
 

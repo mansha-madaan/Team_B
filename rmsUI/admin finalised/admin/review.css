@@ -485,3 +485,27 @@ a.article:hover {
     
 
   }
+
+  @media(max-width:500px){
+
+    #s1{
+
+        margin-left:0px;
+
+    }
+
+}
+
+ @media(max-width:500px){
+
+    .table-container h2.table-heading {
+
+        font-size: 35px ;
+
+
+
+    }
+
+
+
+  }
