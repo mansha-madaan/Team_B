@@ -8,7 +8,8 @@
         }
         h2{
             text-align: center;
-            color: black;
+            /* color: black; */
+            color: #f15e2a;
            font-family: unicons;
         }
         
@@ -18,7 +19,8 @@
           color: black;
           font-size: 1em;
           text-align: center;
-          background-image: linear-gradient(to left,#f15e2a,white );
+          /* background-image: linear-gradient(to left,#f15e2a,white ); */
+          background-color: whitesmoke;
           border-bottom: 1px solid black;
           margin-bottom: 1%;
           border-radius: 4px;
@@ -40,7 +42,8 @@
         .container {
           border-radius: 5px;
         /*  background-image:linear-gradient(to left,#f15e2a,white );*/
-        background-color: rgb(128, 128, 128,0.2);
+        /* background-color: rgb(128, 128, 128,0.2); */
+        background-color: peachpuff;
           padding: 20px;
           margin-left:10% ;
           max-width: 80%;
@@ -80,10 +83,10 @@
         }
 
 .collapse a{
-  background-image: linear-gradient(to left,#f15e2a,white );
+ background-color: black;
 }
 a{
-  color: black;
+  color: white;
 }
 
 
@@ -93,7 +96,10 @@ a{
         color:linear-gradient(to left,#f15e2a,white );
         
     }
-
+a:hover{
+  background-color: white;
+  color: black;
+}
 
 a,
 a:hover,
@@ -138,7 +144,7 @@ a:focus {
     left: -334px;
     height: 100vh;
     z-index: 999;
-    background-image:linear-gradient(to left,#f15e2a,white );
+   background-color: black;
     transition: all 0.3s;
     overflow-y: scroll;
     box-shadow: 3px 3px 3px rgb(0 0 0 / 20%);
@@ -194,7 +200,7 @@ a:focus {
 }
 
 #sidebar ul p {
-    color: black;
+    color: white;
     padding: 10px;
 }
 
@@ -202,13 +208,14 @@ a:focus {
     padding: 15px;
     font-size: 0.8em;
     display: block;
-    color: black;
+    color: white;
+}
+#sidebar ul li a:hover{
+  color:black;
 }
 
-#sidebar ul li a:hover {
-  color :linear-gradient(to left,#f15e2a,white );
- background-color:  white;
-}
+
+
 
 /*#sidebar ul li.active>a,
 a[aria-expanded="true"] {
@@ -233,7 +240,7 @@ a[data-toggle="collapse"] {
 }
 
 ul ul a {
-    font-size: 0.9em ;
+    font-size: 0.6em !important ;
     padding-left: 30px ;
     /*background: #6d7fcc;*/
 }
@@ -297,9 +304,9 @@ a.article:hover {
     width: 120px;
     height: 120px;
     margin: -76px 0 0 -76px;
-    border: 3px solid #1F2739;
+    border: 3px solid white;
     border-radius: 50%;
-    border-top: 3px solid black;
+    border-top: 3px solid #f15e2a;
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
   }

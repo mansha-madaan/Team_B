@@ -18,6 +18,19 @@
    text-align: center;
    align-items: center;
   }
+  #mytable {
+    box-shadow: 0rem 0.25rem 0.938rem rgb(10, 10, 10);
+  -moz-box-shadow: 0rem 0.25rem 0.938rem rgb(10, 10, 10);
+ -webkit-box-shadow: 0rem 0.25rem 0.938rem rgb(10, 10, 10);
+
+  
+}
+#mytable tr{
+  box-shadow: 0rem 0.25rem 0.938rem rgb(10, 10, 10);
+  -moz-box-shadow: 0rem 0.25rem 0.938rem rgb(10, 10, 10);
+ -webkit-box-shadow: 0rem 0.25rem 0.938rem rgb(10, 10, 10);
+}
+
 /* h1 {
    font-size:3em; 
    font-weight: 300;
@@ -64,9 +77,9 @@ text-align: center;
    color:black;
      font-weight:lighter;
      font-size: 1em;
-   -webkit-box-shadow: 0 2px 2px -2px #0E1119;
+    -webkit-box-shadow: 0 2px 2px -2px #0E1119;
       -moz-box-shadow: 0 2px 2px -2px #0E1119;
-           box-shadow: 0 2px 2px -2px #0E1119;
+           box-shadow: 0 2px 2px -2px #0E1119; 
  }
  .container {
      /* background-image: linear-gradient(to right,rgb(243, 236, 172), rgb(240, 234, 151)); */
@@ -102,11 +115,12 @@ padding: 0 0 8em 0;
      padding-top: 2%;
    padding-left:2%; 
    padding-right:2%; 
+   color:black;
  }
 .container table, tbody, tr{
-  box-shadow: 0rem 0.25rem 0.938rem rgb(10, 10, 10);
+  /* box-shadow: 0rem 0.25rem 0.938rem rgb(10, 10, 10);
   -moz-box-shadow:0rem 0.25rem 0.938rem rgb(10, 10, 10);
- -webkit-box-shadow:0rem 0.25rem 0.938rem rgb(10, 10, 10);
+ -webkit-box-shadow:0rem 0.25rem 0.938rem rgb(10, 10, 10); */
  }
  /* Background-color of the odd rows */
  .container tr:nth-child(odd) {
@@ -121,7 +135,7 @@ font-weight:lighter;
 font-size:120% 
 }
  .container tr:hover {
-    background-color: #71747c;
+    background-color: snow;
  -webkit-box-shadow: 0 6px 6px -6px #0E1119;
       -moz-box-shadow: 0 6px 6px -6px #0E1119;
            box-shadow: 0 6px 6px -6px #0E1119;
@@ -149,9 +163,10 @@ font-size:120%
    table tbody tr th::before, table tbody tr td::before{content: attr(data-title); display:block;}
    table tbody tr td{display: block; width: 100%; float:center;overflow: hidden;}
    table tbody tr th{display: block; width: 100%; float:center;overflow: hidden;}
-   table tbody tr{margin-bottom:16px; float: center; clear: both;box-shadow: 0px 4px 15px rgb(17, 17, 16);
+    table tbody tr{margin-bottom:16px; float: center; clear: both;
+    /* box-shadow: 0px 4px 15px rgb(17, 17, 16);
    -moz-box-shadow: 0px 4px 15px rgb(17, 17, 16);
-  -webkit-box-shadow: 0px 4px 15px rgb(17, 17, 16);
+  -webkit-box-shadow: 0px 4px 15px rgb(17, 17, 16); */ 
 
 }
 }
