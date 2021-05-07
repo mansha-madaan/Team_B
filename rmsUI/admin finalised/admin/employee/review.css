@@ -12,13 +12,12 @@
   top: 0;
 }
 
-
  
 
    
 .collapse a{
 
-     background-image:linear-gradient(to left, #f15e2a, white) ;
+  background-color:black;
 }
 #dismiss{
    
@@ -74,7 +73,7 @@ a:focus {
     left: -334px;
     height: 100vh;
     z-index: 999;
-    background-image:linear-gradient(to left, #f15e2a, white) ;
+    background-color:black;
     transition: all 0.3s;
     overflow-y: auto;
     box-shadow: 3px 3px 3px rgb(0 0 0 / 20%);
@@ -134,7 +133,7 @@ a:focus {
 
 #sidebar ul li a {
     padding: 15px;
-    color: black;
+    color:white;
     font-size: 1.3em;
     font-weight: lighter;
     display: block;
@@ -143,6 +142,7 @@ a:focus {
 #sidebar ul li a:hover {
     
     background:white;
+    color:black;
 }
 
 
@@ -167,7 +167,7 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.8em !important;
     padding-left: 30px !important;
-    background: black;
+    
     font-weight: lighter;
 }
 
