@@ -45,7 +45,13 @@ namespace ReviewManagementSystem.Controllers
         public IActionResult edit(int id, [FromBody] ReviewRequest reviewRequest)
         {
             Review XReview = _context.Review.FirstOrDefault(R => R.Rid == id);
-            XReview.Rstatus = "Closed";
+
+            if (reviewRequest.ifSubmit == true)
+            {
+                XReview.Rstatus = "Closed";
+
+            }
+            
 
             XReview.RqEffect = reviewRequest.RqEffect;
             XReview.RqEffectStatus = reviewRequest.RqEffectStatus;

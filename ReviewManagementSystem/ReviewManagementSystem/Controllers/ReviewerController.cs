@@ -57,7 +57,12 @@ namespace ReviewManagementSystem.Controllers
         public IActionResult Put(int id, [FromBody] ReviewRequest reviewRequest)
         {
             Review XReview = _context.Review.FirstOrDefault(R => R.Rid == id);
-            XReview.Rstatus = "Reviewer Level";
+            if (reviewRequest.ifSubmit == true)
+            {
+                XReview.Rstatus = "Reviewer Level";
+
+            }
+            
             XReview.QaName = reviewRequest.QaName;
             XReview.RqEffect = reviewRequest.RqEffect;
             XReview.RqEffectStatus = reviewRequest.RqEffectStatus;
