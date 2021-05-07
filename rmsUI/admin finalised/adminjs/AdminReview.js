@@ -32,6 +32,7 @@ function allEmp() {
 
       data.forEach((empRequest) => {
         // console.log(user);
+        // getById(empRequest.empId);
           sendEmail(empRequest.empEmailId);
       });
 
@@ -85,9 +86,10 @@ function initiateReview() {
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   var raw = JSON.stringify({
-    ReviewName: "Not Filled",
+    //ReviewName: "Not Filled",
+    ReviewName: "Review 2021",
     TargetDate: "2018-12-28",
-    ReviewCycle: "Not Filled",
+    ReviewCycle: "Oct 2021",
     PromotionCycle: "Not Filled",
     RName: "Not Filled",
     QaName: "Not Filled",
@@ -261,3 +263,42 @@ function mySearch() {
     }
   }
 }
+
+////////////////////
+// function getById(saveid) {
+//   // const url = 'https://localhost:44339/api/user/'+id;
+//   // console.log(url)
+//   fetch("https://localhost:44367/api/profile/" + saveid, {
+//     mode: "cors", // no-cors, *cors, same-origin
+//     cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+//     credentials: "same-origin", // include, *same-origin, omit
+//     headers: {
+//       "Content-Type": "application/json",
+//       // 'Content-Type': 'application/x-www-form-urlencoded',
+//       Authorization: `Bearer ${localStorage.getItem("token")}`,
+//     },
+//     redirect: "follow", // manual, *follow, error
+//     referrerPolicy: "no-referrer",
+//   })
+//     .then((res) => res.json())
+//     .then((data) => {
+//       // let li = '';
+//       // data=JSON.parse(data)
+//       console.log(data);
+
+//       // console.log(user);
+
+//       // document.getElementById("doj").value = data[0].dateJoin;
+//       data[0].r_Name;
+//       data[0].qA_Name;
+//       console.log(data[0].qA_Name);
+//       console.log(data[0].r_Name);
+//       return [data[0].r_Name, data[0].qA_Name];
+
+//       // do something with data
+//       // console.log(data);
+//     })
+//     .catch(function (error) {
+//       console.log("Looks like there was a problem: \n", error);
+//     });
+// }

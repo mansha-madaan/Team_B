@@ -69,6 +69,11 @@ namespace ReviewManagementSystem.DbModels
                     .HasMaxLength(255)
                     .IsUnicode(false);
 
+                entity.Property(e => e.Promotion_Cycle)
+                    .HasColumnName("PromotionCycle")
+                    .HasMaxLength(255)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.Plocation)
                     .HasColumnName("PLocation")
                     .HasMaxLength(255)
@@ -85,6 +90,16 @@ namespace ReviewManagementSystem.DbModels
 
                 entity.Property(e => e.TotalExp)
                     .HasColumnName("Total_Exp")
+                    .HasMaxLength(255)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.QA_Name)
+                    .HasColumnName("QA_Name")
+                    .HasMaxLength(255)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.R_Name)
+                    .HasColumnName("R_Name")
                     .HasMaxLength(255)
                     .IsUnicode(false);
 
