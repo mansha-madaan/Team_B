@@ -8,7 +8,8 @@ let qaNames = { Himanshu: "Himanshu", Avneet: "Avneet" };
 
 let mytable = document.getElementById("mytable");
 let classButton = ["fa", "fa-edit","fa-1x","btn","btn-secondary", "toremove"];
-let saveButtonClass = ["fa", "fa-save","fa-2x","btn","btn-secondary", "toremove"];
+let saveButtonClass = ["fa", "fa-save","btn","m-2","p-2","btn-secondary", "toremove"]; // sbs = save before sumbit
+let submitButtonClass = ["fa", "fa-cloud-upload","btn","m-2","p-2","btn-secondary", "toremove"];
 let disabledRditButton = "d-none";
 let toShow = false;
 let tableDiv = document.getElementsByClassName("back-container");
@@ -78,7 +79,7 @@ let fillDataIntoTable = (data) => {
     year = data.targetDate.slice(0, 4);
     month = data.targetDate.slice(5, 7);
     date = data.targetDate.slice(8, 10);
-    Totaldate = month + "-" + date + "-" + year;
+    Totaldate = year + "-" + date + "-" + month;
   }
   selfEffect3000.value = data.selfEffect;
   selfEffectStatus.value = data.selfEffectStatus;
@@ -88,8 +89,26 @@ let fillDataIntoTable = (data) => {
   selfGrowthStatus.value = data.selfGrowthStatus;
   selfFeedback3000.value = data.selfFeed;
   selfFeedbackStatus.value = data.selfFeedStatus;
-  if (data.rstatus === "Reviewer Level") {
+  // if (data.rstatus === "Reviewer Level") {
     // console.log("setting up values");
+  if (
+    !data.rqEffect ||
+    !data.rqEffectStatus ||
+    !data.rqLead ||
+    !data.rqLeadStatus ||
+    !data.rqGrowth ||
+    !data.rqGrowthStatus ||
+    !data.rqFeed ||
+    !data.rqFeedStatus ||
+    data.rqEffect.trim() !== "" ||
+    data.rqEffectStatus.trim() !== "" ||
+    data.rqLead.trim() !== "" ||
+    data.rqLeadStatus.trim() !== "" ||
+    data.rqGrowth.trim() !== "" ||
+    data.rqGrowthStatus.trim() !== "" ||
+    data.rqFeed.trim() !== "" ||
+    data.rqFeedStatus.trim() !== ""
+  )
     rqEffect3000.value = data.rqEffect;
     rqEffectStatus.value = data.rqEffectStatus;
     rqLeader3000.value = data.rqLead;
@@ -98,7 +117,7 @@ let fillDataIntoTable = (data) => {
     rqFeedbackStatus.value = data.rqFeedStatus;
     rqGrowth3000.value = data.rqGrowth;
     rqGrowthStatus.value = data.rqGrowthStatus;
-  }
+  // }
   reviewName.textContent = !data.reviewName.trim()
     ? printStringIfEmpty
     : data.reviewName.trim();
@@ -168,6 +187,22 @@ let doWorkAfterDom = () => {
         });
         tableDiv[0].insertBefore(saveButton, mytable);
         // addEditButtons();
+        ////////submit
+        let submitButton = document.createElement("a");
+        submitButton.classList.add(...submitButtonClass);
+        submitButton.addEventListener("click", (event) => {
+          Promise.resolve(checkAndSubmit()).then((returned) => {
+            if (!returned) {
+              Swal.fire({
+                title: "Incomplete Form",
+                text: "Please Fill All The Fields!",
+                icon: "warning",
+                confirmButtonText: "ok",
+              });
+            }
+          });
+        });
+        tableDiv[0].insertBefore(submitButton, mytable);
       }
     })
     .catch((err) => {
@@ -299,6 +334,136 @@ let addEditButtons = () => {
   }
 };
 //api breaking, returning ok always
+let checkAndSubmit = () => {
+  console.log(
+    !reviewName.textContent,
+    !targetDate.textContent,
+    !reviewCycle.textContent,
+    !promotionCycle.textContent,
+    !rName.textContent,
+    !qaName.textContent,
+    !rqEffect3000.value,
+    !rqEffectStatus.value,
+    !rqGrowth3000.value,
+    !rqGrowthStatus.value,
+    !rqFeedback3000.value,
+    !rqFeedbackStatus.value,
+    !rqLeader3000.value,
+    !rqLeaderStatus.value
+  );
+  if (
+    !reviewName.textContent ||
+    !targetDate.textContent ||
+    !reviewCycle.textContent ||
+    !promotionCycle.textContent ||
+    !rName.textContent ||
+    !qaName.textContent ||
+    !rqEffect3000.value ||
+    rqEffectStatus.value === "" ||
+    !rqGrowth3000.value ||
+    rqGrowthStatus.value === "" ||
+    !rqFeedback3000.value ||
+    rqFeedbackStatus.value === "" ||
+    !rqLeader3000.value ||
+    rqLeaderStatus.value === ""
+  )
+    return false;
+
+  targetDate.textContent = targetDate.textContent
+    .split("-")
+    .reverse()
+    .join("-");
+  let record = {
+    ifSubmit: true,
+    RqEffect: rqEffect3000.value,
+    RqEffectStatus: rqEffectStatus.value,
+    RqLead: rqLeader3000.value,
+    RqLeadStatus: rqLeaderStatus.value,
+    RqFeed: rqFeedback3000.value,
+    RqFeedStatus: rqFeedbackStatus.value,
+    RqGrowth: rqGrowth3000.value,
+    RqGrowthStatus: rqGrowthStatus.value,
+    // SelfEffect:  //these fields are just adjacent reviewer fields
+    // rqEffectStatus
+    // SelfLead:
+    // SelfLeadStatus
+    // SelfGrowth
+    // rqGrowthStatus
+    // selfFeed
+    // selfFeedStatus
+  };
+  console.log(JSON.stringify(record));
+  fetch(baseUrl + "/QA/" + params.get("rid"), {
+    method: "PUT",
+    mode: "cors", // no-cors, *cors, same-origin
+    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: "same-origin", // include, *same-origin, omit
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`, //no prob if null handeled later
+
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: JSON.stringify(record),
+    redirect: "follow", // manual, *follow, error
+    referrerPolicy: "no-referrer",
+  })
+    // .then((res) => {
+    //   // console.log(res);
+    //   // if (!res.ok) {
+    //   //   throw new Error(res.status);
+    //   // }
+    //   // // if (res.status !== 200) {
+    //   //   Swal.fire({
+    //   //     title: "Error!",
+    //   //     text: "Somethinng Went Wrong While Saving!",
+    //   //     icon: "error",
+    //   //     confirmButtonText: "ok",
+    //   //   });
+    //   //   Promise.reject();
+    //   // }
+    //   // else
+    //    return res.json();
+    // })
+    .then((data) => {
+      if (!data.ok) {
+        throw new Error(data.status);
+      }
+      Swal.fire({
+        title: "Submitted",
+        text: "",
+        icon: "success",
+        confirmButtonText: "ok",
+      });
+      doWorkAfterDom();
+    })
+    .catch((err) => {
+      console.log(err);
+      if (err.message === "401") {
+        Swal.fire({
+          title: "Please LogIn Again",
+          text: " ",
+          icon: "error",
+          confirmButtonText: "ok",
+        }).then(() => {
+          window.location.replace(toRedirectPage);
+        });
+
+        return false;
+      }
+
+      // if(localStorage.getItem("token"))
+
+      Swal.fire({
+        title: "Could not Save!",
+        text: "Somethinng Went Wrong!",
+        icon: "error",
+        confirmButtonText: "ok",
+      });
+    });
+  return true;
+};
+//////////////////////////////////////////////////checkandsave
 let checkAndSave = () => {
   console.log(
     !reviewName.textContent,
@@ -339,6 +504,7 @@ let checkAndSave = () => {
     .reverse()
     .join("-");
   let record = {
+    ifSubmit: false,
     RqEffect: rqEffect3000.value,
     RqEffectStatus: rqEffectStatus.value,
     RqLead: rqLeader3000.value,

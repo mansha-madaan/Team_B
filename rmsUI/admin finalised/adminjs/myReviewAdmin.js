@@ -511,9 +511,9 @@ function getById(empData) {
       record.RName = data[0].r_Name;
       record.QaName = data[0].qA_Name;
       record.PromotionCycle = data[0].promotion_Cycle;
+      
+    
      
-    
-    
     fetch(baseUrl + "/admin/" + params.get("rid"), {
     method: "PUT",
     mode: "cors", // no-cors, *cors, same-origin
@@ -552,6 +552,7 @@ function getById(empData) {
         throw new Error(data.status);
       }
       fillDataIntoTable(data);
+      
       // returned_byId = getById(data.empId);
       // console.log(getById(data.empId));
       // console.log(returned_byId);
