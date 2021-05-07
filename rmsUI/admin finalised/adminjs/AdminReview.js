@@ -1,98 +1,89 @@
 $(document).ready(function () {
   $("#sidebar").mCustomScrollbar({
-      theme: "minimal"
+    theme: "minimal",
   });
 
-  $('#dismiss, .overlay').on('click', function () {
-      $('#sidebar').removeClass('active');
-      $('.overlay').removeClass('active');
+  $("#dismiss, .overlay").on("click", function () {
+    $("#sidebar").removeClass("active");
+    $(".overlay").removeClass("active");
   });
 
-  $('#sidebarCollapse').on('click', function () {
-      $('#sidebar').addClass('active');
-      $('.overlay').addClass('active');
-      $('.collapse.in').toggleClass('in');
-      $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+  $("#sidebarCollapse").on("click", function () {
+    $("#sidebar").addClass("active");
+    $(".overlay").addClass("active");
+    $(".collapse.in").toggleClass("in");
+    $("a[aria-expanded=true]").attr("aria-expanded", "false");
   });
-})
-
-
+});
 
 function allEmp() {
-  
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
   var requestOptions = {
     method: "GET",
     headers: myHeaders,
-    
+
     redirect: "follow",
   };
 
   fetch("https://localhost:44367/api/login", requestOptions)
     .then((res) => res.json())
-    // .then((data) => {
-      
-    //   data.forEach((empRequest) => {
-    //     // console.log(user);
-    //       sendEmail(empRequest.empEmailId);
-    //   });
-      
+    .then((data) => {
 
-    //   // do something with data
-    //   console.log(data);
+      data.forEach((empRequest) => {
+        // console.log(user);
+          sendEmail(empRequest.empEmailId);
+      });
+
+      // do something with data
+      console.log(data);
+    })
+    // .then((data) => {
+    //   Swal.fire({
+    //     title: "Confirm to initiate a review?",
+    //     showDenyButton: true,
+    //     //showCancelButton: true,
+    //     confirmButtonText: `  Confirm`,
+    //     denyButtonText: `Cancel`,
+    //   }).then((result) => {
+    //     /* Read more about isConfirmed, isDenied below */
+    //     if (result.isConfirmed) {
+    //       data.forEach((empRequest) => {
+    //         // console.log(user);
+    //         sendEmail(empRequest.empEmailId);
+    //       });
+    //       Swal.fire("Review Initiated", "", "success");
+    //     } else if (result.isDenied) {
+    //       Swal.fire("Review not Initiated", "", "info");
+    //     }
+    //   });
     // })
-    .then(( (data) => {
-      Swal.fire({
-        title: 'Confirm to initiate a review?',
-        showDenyButton: true,
-        //showCancelButton: true,
-        confirmButtonText: `  Confirm`,
-        denyButtonText: `Cancel`,
-       }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
-        if (result.isConfirmed) {
-          data.forEach((empRequest) => {
-            // console.log(user);
-              sendEmail(empRequest.empEmailId);
-           
-            
-          });    
-        Swal.fire('Review Initiated', '', 'success')
-        } else if (result.isDenied) {
-        Swal.fire('Review not Initiated', '', 'info')
-        }
-       })
-      }))
     .catch((error) => console.log("error", error));
 }
 
 function sendEmail(emailID) {
+  var formdata = new FormData();
+  formdata.append("ToEmail", emailID.toString());
+  formdata.append("Subject", "Review Initiated");
+  formdata.append("Body", "Greeting, Kindly fill your reviews asap!");
+  formdata.append(" Attachments", "");
 
-    var formdata = new FormData();
-    formdata.append("ToEmail", emailID.toString());
-    formdata.append("Subject", "Review Initiated");
-    formdata.append("Body", "Greeting, Kindly fill your reviews asap!");
-    formdata.append(" Attachments", "");
+  var requestOptions = {
+    method: "POST",
+    body: formdata,
+    redirect: "follow",
+  };
 
-    var requestOptions = {
-      method: "POST",
-      body: formdata,
-      redirect: "follow",
-    };
-
-    fetch("https://localhost:44367/api/mail/send", requestOptions)
-      .then((response) => response.text())
-      .then((result) => console.log(result))
-      .catch((error) => console.log("error", error));
+  fetch("https://localhost:44367/api/mail/send", requestOptions)
+    .then((response) => response.text())
+    .then((result) => console.log(result))
+    .catch((error) => console.log("error", error));
 }
-
 
 function initiateReview() {
   allEmp();
   var myHeaders = new Headers();
   myHeaders.append("Content-Type", "application/json");
-
   var raw = JSON.stringify({
     ReviewName: "Not Filled",
     TargetDate: "2018-12-28",
@@ -101,27 +92,70 @@ function initiateReview() {
     RName: "Not Filled",
     QaName: "Not Filled",
   });
-
   var requestOptions = {
     method: "POST",
     headers: myHeaders,
     body: raw,
     redirect: "follow",
   };
-
   fetch("https://localhost:44367/api/admin", requestOptions)
     .then((response) => response.text())
-    .then((result) => {
-      allReview()
-      console.log(result)
+    .then((data) => {
+      Swal.fire({
+        title: "Confirm to initiate a review?",
+        showDenyButton: true,
+        //showCancelButton: true,
+        confirmButtonText: `  Confirm`,
+        denyButtonText: `Cancel`,
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          //data.forEach((empRequest) => {
+          // console.log(user);
+          //sendEmail(empRequest.empEmailId);
+          allReview();
+
+          // });
+          Swal.fire("Review Initiated", "", "success");
+        } else if (result.isDenied) {
+          Swal.fire("Review not Initiated", "", "info");
+        }
+      });
     })
     .catch((error) => console.log("error", error));
-  
 }
 
+// function initiateReview() {
+//   allEmp();
+//   var myHeaders = new Headers();
+//   myHeaders.append("Content-Type", "application/json");
+
+//   var raw = JSON.stringify({
+//     ReviewName: "Not Filled",
+//     TargetDate: "2018-12-28",
+//     ReviewCycle: "Not Filled",
+//     PromotionCycle: "Not Filled",
+//     RName: "Not Filled",
+//     QaName: "Not Filled",
+//   });
+
+//   var requestOptions = {
+//     method: "POST",
+//     headers: myHeaders,
+//     body: raw,
+//     redirect: "follow",
+//   };
+
+//   fetch("https://localhost:44367/api/admin", requestOptions)
+//     .then((response) => response.text())
+//     .then((result) => {
+//       allReview();
+//       console.log(result);
+//     })
+//     .catch((error) => console.log("error", error));
+// }
 
 function allReview() {
-  
   myFunction();
   var url = "https://localhost:44367/api/admin";
 
@@ -135,7 +169,7 @@ function allReview() {
     headers: {
       "Content-Type": "application/json",
 
-      //Authorization: `Bearer ${localStorage.getItem("token")}`,
+      //Authorization: `Bearer ${localStorage.getItem("token")}`,
     },
 
     redirect: "follow",
@@ -171,22 +205,15 @@ function allReview() {
         }
 
         li += `<tr>
-
-             <td data-heading="Form Name">${reviewInfo.reviewName}</td>
-
+             <td data-heading="Form Name">${reviewInfo.reviewName}</td>
               
               
-             <td data-heading="Cycle">${reviewInfo.reviewCycle}</td>
-
-             <td data-heading="TargetData">${Totaldate}</td>
-
-             <td data-heading="Status">${reviewInfo.rstatus}</td>
-
-             <td><button type="button" class="btn btn-warning" onclick="location.href='/admin/recordViewAdmin.html?rid=${reviewInfo.rid}'">View</button></td>
-
-             
-
-           </tr>`;
+             <td data-heading="Cycle">${reviewInfo.reviewCycle}</td>
+             <td data-heading="TargetData">${Totaldate}</td>
+             <td data-heading="Status">${reviewInfo.rstatus}</td>
+             <td><button type="button" class="btn btn-warning" onclick="location.href='/admin/recordViewAdmin.html?rid=${reviewInfo.rid}'">View</button></td>
+             
+           </tr>`;
       });
 
       document.getElementById("allTableContent").innerHTML = li;
@@ -195,7 +222,7 @@ function allReview() {
     })
 
     .catch(function (error) {
-      console.log("Looks like there was a problem: \n", error);
+      console.log("Looks like there was a problem: \n", error);
     });
 }
 function myFunction() {
@@ -206,15 +233,14 @@ function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("myDiv").style.display = "block";
 }
-{/* <td data-heading="Form Name">${reviewInfo.reviewName}</td>
+{
+  /* <td data-heading="Form Name">${reviewInfo.reviewName}</td>
               
-             <td data-heading="Cycle">${reviewInfo.reviewCycle}</td>
-
-             <td data-heading="TargetData">${Totaldate}</td>
-
-             <td data-heading="Status">${reviewInfo.rstatus}</td>
-
-             <td ><button class="btn btn-warning" type="submit" onclick="location.href='./recordView.html?rid=${reviewInfo.rid}'">View</button></td> */}
+             <td data-heading="Cycle">${reviewInfo.reviewCycle}</td>
+             <td data-heading="TargetData">${Totaldate}</td>
+             <td data-heading="Status">${reviewInfo.rstatus}</td>
+             <td ><button class="btn btn-warning" type="submit" onclick="location.href='./recordView.html?rid=${reviewInfo.rid}'">View</button></td> */
+}
 
 // onclick="location.href='./recordView.html?rid=${reviewInfo.rid}'"s
 function mySearch() {
@@ -232,6 +258,6 @@ function mySearch() {
       } else {
         tr[i].style.display = "none";
       }
-    }      
+    }
   }
 }

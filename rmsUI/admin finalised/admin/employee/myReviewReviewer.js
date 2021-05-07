@@ -1,5 +1,5 @@
 let baseUrl = "https://localhost:44367/api";
-let toRedirectPage = "./Login.html";
+let toRedirectPage = "/admin/Login.html";
 //backkedn put y is empid nullable?
 let beforeAjaxText = "Fetching ...";
 let printStringIfEmpty = "Not Filled";

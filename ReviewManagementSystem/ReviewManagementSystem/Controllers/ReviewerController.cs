@@ -10,7 +10,7 @@ using ReviewManagementSystem.DbModels;
 
 namespace ReviewManagementSystem.Controllers
 {
-    
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ReviewerController : ControllerBase

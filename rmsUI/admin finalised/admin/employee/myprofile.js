@@ -11,6 +11,7 @@ function getById() {
       headers: {
         "Content-Type": "application/json",
         // 'Content-Type': 'application/x-www-form-urlencoded',
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
       redirect: "follow", // manual, *follow, error
       referrerPolicy: "no-referrer",
@@ -20,10 +21,13 @@ function getById() {
         // let li = '';
         // data=JSON.parse(data)
 
-        localStorage.setItem("name", data[0].firstName+" "+ data[0].lastName);
+        localStorage.setItem(
+          "name",
+          data[0].firstName + " " + data[0].lastName
+        );
         console.log(localStorage.getItem("name"));
         console.log(data);
-  
+
         // console.log(user);
         document.getElementById("fname").value = data[0].firstName;
         document.getElementById("lname").value = data[0].lastName;
@@ -33,7 +37,7 @@ function getById() {
         document.getElementById("Total").value = data[0].totalExp;
         //document.getElementById("doj").value = data[0].dateJoin;
         document.getElementById("subject").innerHTML = data[0].skills;
-  
+
         // do something with data
         console.log(data);
       })

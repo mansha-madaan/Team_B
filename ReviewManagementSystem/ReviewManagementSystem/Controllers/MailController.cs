@@ -11,7 +11,7 @@ using ReviewManagementSystem.Services;
 
 namespace ReviewManagementSystem.Controllers
 {
-    
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class MailController : ControllerBase

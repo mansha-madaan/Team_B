@@ -32,6 +32,8 @@ namespace ReviewManagementSystem.DbModels
         public string RqGrowth { get; set; }
         public string RqGrowthStatus { get; set; }
 
+        public bool? ifSubmit { get; set; }
+
         
         public EmpLogin Emp { get; set; }
     }
