@@ -6,6 +6,8 @@ let printStringIfEmpty = "Not Filled";
 let reviewerNames = { Bhanuja: "Bhanuja", Mansha: "Mansha", Sumedha: "Sumedha" };
 let qaNames = { Himanshu: "Himanshu", Avneet: "Avneet", Sakshi: "Sakshi" };
 
+
+//let returned_byId;
 let mytable = document.getElementById("mytable");
 let classButton = ["fa", "fa-edit","fa-1x","btn","btn-secondary", "toremove"];
 let saveButtonClass = ["fa", "fa-save", "fa-2x","btn", "m-2","p-2","btn-secondary","toremove"];
@@ -62,7 +64,8 @@ let fillDataIntoTable = (data) => {
   //     promotionCycle,
   //     qaName,
   //   } = data;
-  console.log(data);
+  
+   
   console.log("in fill");
   let Totaldate;
   if (data.targetDate !== null) {
@@ -97,13 +100,15 @@ let fillDataIntoTable = (data) => {
   rName.textContent = !data.rName.trim()
     ? printStringIfEmpty
     : data.rName.trim();
+
   qaName.textContent = !data.qaName.trim()
     ? printStringIfEmpty
     : data.qaName.trim();
-};
+};;
 //to do add loader before dom content load and make listener after ajax call
 let doWorkAfterDom = () => {
   myFunction();
+  
   fetch(baseUrl + "/reviewlist/" + params.get("rid"), {
     method: "GET",
     mode: "cors", // no-cors, *cors, same-origin
@@ -125,6 +130,7 @@ let doWorkAfterDom = () => {
     })
     .then((data) => {
       toShow = true; //admin
+      getById(data);
       allToRemove = document.querySelectorAll(".toremove");
       allToRemove.forEach((el) => el.remove());
       fillDataIntoTable(data);
@@ -365,10 +371,14 @@ let checkAndSave = () => {
     //    return res.json();
     // })
     .then((data) => {
+      
       if (!data.ok) {
         throw new Error(data.status);
       }
-
+      // returned_byId = getById(data.empId);
+      // console.log(getById(data.empId));
+      // console.log(returned_byId);
+      // console.log(data.empId);
       Swal.fire({
         title: "Saved",
         text: "",
@@ -463,3 +473,117 @@ function showPage() {
   document.getElementById("myDiv").style.display = "block";
 }
 
+//////////////////////////
+
+function getById(empData) {
+  
+  let saveid = empData.empId;
+
+  // const url = 'https://localhost:44339/api/user/'+id;
+  // console.log(url)
+  fetch("https://localhost:44367/api/profile/" + saveid, {
+    mode: "cors", // no-cors, *cors, same-origin
+    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: "same-origin", // include, *same-origin, omit
+    headers: {
+      "Content-Type": "application/json",
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+    redirect: "follow", // manual, *follow, error
+    referrerPolicy: "no-referrer",
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      // let li = '';
+      // data=JSON.parse(data)
+      console.log(data);
+
+      // console.log(user);
+    
+      // document.getElementById("doj").value = data[0].dateJoin;
+      data[0].r_Name;
+      data[0].qA_Name;
+     console.log(data[0].qA_Name);
+      console.log(data[0].r_Name);
+      let record = { ...empData };
+      
+      record.RName = data[0].r_Name;
+      record.QaName = data[0].qA_Name;
+      record.PromotionCycle = data[0].promotion_Cycle;
+     
+    
+    
+    fetch(baseUrl + "/admin/" + params.get("rid"), {
+    method: "PUT",
+    mode: "cors", // no-cors, *cors, same-origin
+    cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+    credentials: "same-origin", // include, *same-origin, omit
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${localStorage.getItem("token")}`, //no prob if null handeled later
+
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: JSON.stringify(record),
+    redirect: "follow", // manual, *follow, error
+    referrerPolicy: "no-referrer",
+  })
+    // .then((res) => {
+    //   // console.log(res);
+    //   // if (!res.ok) {
+    //   //   throw new Error(res.status);
+    //   // }
+    //   // // if (res.status !== 200) {
+    //   //   Swal.fire({
+    //   //     title: "Error!",
+    //   //     text: "Somethinng Went Wrong While Saving!",
+    //   //     icon: "error",
+    //   //     confirmButtonText: "ok",
+    //   //   });
+    //   //   Promise.reject();
+    //   // }
+    //   // else
+    //    return res.json();
+    // })
+    .then((data) => {
+      
+      if (!data.ok) {
+        throw new Error(data.status);
+      }
+      fillDataIntoTable(data);
+      // returned_byId = getById(data.empId);
+      // console.log(getById(data.empId));
+      // console.log(returned_byId);
+      // console.log(data.empId);
+     
+    })
+    .catch((err) => {
+      console.log(err);
+      if (err.message === "401") {
+        Swal.fire({
+          title: "Please LogIn Again",
+          text: " ",
+          icon: "error",
+          confirmButtonText: "ok",
+        }).then(() => {
+          window.location.replace(toRedirectPage);
+        });
+
+       
+      }
+      // if(localStorage.getItem("token"))
+
+      
+    });
+
+
+      return [data[0].r_Name, data[0].qA_Name ];
+      
+      // do something with data
+      // console.log(data);
+    })
+    .catch(function (error) {
+      console.log("Looks like there was a problem: \n", error);
+    });
+}

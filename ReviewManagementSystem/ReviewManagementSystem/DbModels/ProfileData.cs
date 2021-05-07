@@ -15,6 +15,9 @@ namespace ReviewManagementSystem.DbModels
         public string TotalExp { get; set; }
         public DateTime? DateJoin { get; set; }
         public string Skills { get; set; }
+        public string R_Name { get; set; }
+        public string QA_Name { get; set; }
+        public string Promotion_Cycle { get; set; }
 
         public EmpLogin Emp { get; set; }
     }
